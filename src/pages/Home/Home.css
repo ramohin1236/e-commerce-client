@@ -1,0 +1,101 @@
+:root {
+    --color-005b96: #005b96;
+    --color-b3cde0: #b3cde0;
+    --color-FFECBF: #FFECBF;
+    --color-FFECBF: #FFECBF;
+    --color-5885b3: #5885b3;
+    --color-bf4800: #bf4800;
+    --color-3b4149: #3b4149;
+ }
+ .button{
+    background-color: rgb(227, 93, 227);
+   color: white; 
+   font-size: 14px;
+   padding: 13px 33px;
+   border-radius: 20px;
+}
+.button:hover{
+    background-color: rgb(251, 6, 251);
+    color: white; 
+}
+
+.home-wrapper-1 p{
+   font-size: 30px;
+}
+ .main-banner img{
+    width: 700px;
+    height: 450px;
+}
+.main-banner-content{
+  top: 15%;
+   left: 10%;
+}
+.main-banner-content h4{
+    color:  var(--color-bf4800);
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 600;
+    letter-spacing: -2px;
+    margin: 0 0 24px;
+    text-transform: uppercase;
+}
+.main-banner-content h5{
+   
+    font-size: 52px;
+    line-height: 64px;
+    font-weight: 500;
+    letter-spacing: -2px;
+    margin: 0 0 24px;
+    text-transform: none;
+}
+.main-banner-content p{
+   
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: 0.4;
+    margin: 0 0 24px;
+    text-transform: none;
+}
+/* small banner */
+.small-banner img{
+    width: 350px;
+    height: 210px;
+  
+}
+.small-banner-content{
+   top: 15%;
+   left: 10%;
+}
+.small-banner-content h4{
+    color:  var(--color-bf4800);
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    letter-spacing: 0.3;
+    margin: 0 0 24px;
+    text-transform: uppercase;
+}
+.small-banner-content h5{
+    color:  var(--color-3b4149);
+    font-size: 22px;
+    line-height: 24px;
+    font-weight: 500;
+    letter-spacing: -2px;
+    margin: 0 0 24px;
+    text-transform: none;
+}
+.small-banner-content p{
+    color:  var(--color-3b4149);
+    font-size: 14px;
+    line-height: 10px;
+    letter-spacing: 0.4;
+    margin: 0 0 24px;
+    text-transform: none;
+}
+.button-2{
+    background-color: rgb(227, 93, 227);
+   color: white; 
+   font-size: 14px;
+   padding: 10px 20px;
+   border-radius: 20px;
+}

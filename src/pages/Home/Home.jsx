@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 import './Home.css';
+import HFirst from '../../sharred/Home-1/HFirst';
+import HSecond from '../../sharred/Home-2/HSecond';
 
 const Home = () => {
     return (
@@ -74,6 +76,14 @@ const Home = () => {
             </div>
            </div>
           
+          </section>
+              {/* section first */}
+          <section className='home-wrapper-2 py-5'>
+              <HFirst/>
+          </section>
+              {/* section second */}
+          <section className='home-wrapper-2 py-5'>
+              <HSecond/>
           </section>
         </div>
     );

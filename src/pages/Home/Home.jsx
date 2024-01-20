@@ -3,6 +3,9 @@ import './Home.css';
 import HFirst from '../../sharred/Home-1/HFirst';
 import HSecond from '../../sharred/Home-2/HSecond';
 import Marque from '../../sharred/Home-3/Marque';
+import Blog from '../../sharred/Home-4/Blog';
+import Featured from '../../sharred/Home-1/Home-5/Featured';
+
 
 const Home = () => {
     return (
@@ -90,6 +93,15 @@ const Home = () => {
           {/* first marquee */}
           <section className='marque-wrapper py-5'>
              <Marque/>
+          </section>
+            {/* Featured section */}
+            <section className='blog-wrapper py-5 home-wrapper-2'>
+              <Featured/>
+          </section>
+          
+          {/* blog section */}
+          <section className='blog-wrapper py-5 home-wrapper-2'>
+             <Blog/>
           </section>
         </div>
     );

@@ -1,0 +1,49 @@
+:root{
+    --color-777777:  #524949;
+    --color-131921:  #131921;
+}
+.blog-card{
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+.blog-card img{
+    height: 100%;
+    width: 100%;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.blog-content{
+    padding: 15px;
+}
+
+.blog-button{
+    background-color: rgb(54, 71, 199);
+   color: white; 
+   font-size: 14px;
+   padding: 8px 13px 8px 13px;
+   border-radius: 10px;
+}
+.blog-button:hover{
+    background-color: rgb(13, 6, 225);
+    color: white; 
+}
+.date{
+    font-size: 13px;
+    line-height: 24px;
+    text-transform: uppercase;
+    letter-spacing: 0;
+    font-weight: 400;
+    color: var(--color-777777);
+    padding: 0;
+}
+
+.blog-content h5{
+    font-size: 20px;
+    color: var(--color-131921);
+}
+.blog-content p.desc{
+    font-size: 13px;
+    line-height: 22px;
+    color:var(--color-777777)
+}

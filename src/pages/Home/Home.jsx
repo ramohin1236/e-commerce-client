@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import './Home.css';
 import HFirst from '../../sharred/Home-1/HFirst';
 import HSecond from '../../sharred/Home-2/HSecond';
+import Marque from '../../sharred/Home-3/Marque';
 
 const Home = () => {
     return (
@@ -84,6 +85,11 @@ const Home = () => {
               {/* section second */}
           <section className='home-wrapper-2 py-5'>
               <HSecond/>
+          </section>
+
+          {/* first marquee */}
+          <section className='marque-wrapper py-5'>
+             <Marque/>
           </section>
         </div>
     );

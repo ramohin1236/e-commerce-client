@@ -85,6 +85,10 @@ const Home = () => {
           <section className='home-wrapper-2 py-5'>
               <HFirst/>
           </section>
+            {/* Featured section */}
+            <section className='featured-wrapper py-5 home-wrapper-2'>
+              <Featured/>
+          </section>
               {/* section second */}
           <section className='home-wrapper-2 py-5'>
               <HSecond/>
@@ -94,10 +98,7 @@ const Home = () => {
           <section className='marque-wrapper py-5'>
              <Marque/>
           </section>
-            {/* Featured section */}
-            <section className='blog-wrapper py-5 home-wrapper-2'>
-              <Featured/>
-          </section>
+          
           
           {/* blog section */}
           <section className='blog-wrapper py-5 home-wrapper-2'>

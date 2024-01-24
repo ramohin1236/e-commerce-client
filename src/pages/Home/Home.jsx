@@ -6,6 +6,8 @@ import Marque from '../../sharred/Home-3/Marque';
 import Blog from '../../sharred/Home-4/Blog';
 import Featured from '../../sharred/Home-1/Home-5/Featured';
 import Special from '../../sharred/Home-5/Special';
+import Popular from '../../sharred/Home-6/Popular';
+import Famous from '../../sharred/Home-7/Famous';
 
 
 const Home = () => {
@@ -91,10 +93,20 @@ const Home = () => {
               <Featured/>
           </section>
 
+          {/* famous section */}
+          <section className='famous-wrapper py-5 home-wrapper-2'>
+              <Famous/>
+          </section>
           {/* special secton */}
            <section className='special-section py-5 home-wrapper-2'>
                  <Special/>
            </section>
+
+ {/* Popular section */}
+ <section className='popular-wrapper py-5 home-wrapper-2'>
+              <Popular/>
+          </section>
+
               {/* section second */}
           <section className='home-wrapper-2 py-5'>
               <HSecond/>

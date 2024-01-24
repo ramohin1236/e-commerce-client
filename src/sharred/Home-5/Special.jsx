@@ -13,7 +13,7 @@ const Special = () => {
             <SpecialProduct/>
             <SpecialProduct/>
             <SpecialProduct/>
-            <SpecialProduct/>
+  
           </div>
         </div>
     );

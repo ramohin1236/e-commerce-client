@@ -9,8 +9,8 @@ const BreadCrump = ({title}) => {
                  <div className="col-12 ">
                     <p className="text-center mb-0">
                         <Link
-                        to='/'>Home &nbsp;
-                        </Link>/{title}
+                        to='/'>Home 
+                        </Link>/&nbsp;{title}
                     </p>
                  </div>
                </div>

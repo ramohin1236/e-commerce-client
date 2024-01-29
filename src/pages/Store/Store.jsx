@@ -1,12 +1,16 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable react/no-unknown-property */
+
 import BreadCrump from "../../components/BreadCrump";
 import Meta from "../../components/Meta/Meta";
+
 import './Store.css';
 import ReactStars from "react-rating-stars-component";
 import { FaAlignJustify, FaBars, FaEquals } from "react-icons/fa";
 // import { useState } from "react";
 import ProductCard from './../../components/FeaturedProduct/ProductCard';
+import Color from "../../components/Color/Color";
+
 
 
 
@@ -81,20 +85,7 @@ const Store = () => {
                                     </h5>
                                     <div>
                                         <div className="d-flex flex-wrap">
-                                            <ul className="colors ps-0">
-                                                <li></li>
-                                                <li></li>
-                                                <li></li>
-                                                <li></li>
-                                                <li></li>
-                                                <li></li>
-                                                <li></li>
-                                                <li></li>
-                                                <li></li>
-                                                <li></li>
-                                                <li></li>
-                                                <li></li>
-                                            </ul>
+                                           <Color/>
                                         </div>
                                     </div>
 

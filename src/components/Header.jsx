@@ -44,7 +44,7 @@ const Header = () => {
         <div className="col-5">
             <div className="header-upper-links d-flex align-items-center justify-content-between">
                 <div>
-                    <Link className="d-flex align-items-center">
+                    <Link to="/compare" className="d-flex align-items-center">
                     <img src="/public/svg-compare.svg" alt="" />
                     <p className="text-white mr-3 mb-0">Compare <br /> Products</p>
                     </Link>

@@ -10,10 +10,21 @@ const Blog = () => {
              <div className='col-12'>
                 <h2 className='section-heading'>Our Latest News</h2>
              </div> 
-              <BlogCart/>
-              <BlogCart/>
-              <BlogCart/>
-              <BlogCart/>
+             
+           </div>
+           <div className="row">
+             <div className="col-3">
+            <BlogCart/>
+             </div>
+             <div className="col-3">
+            <BlogCart/>
+             </div>
+             <div className="col-3">
+            <BlogCart/>
+             </div>
+             <div className="col-3">
+            <BlogCart/>
+             </div>
            </div>
         </div>
     );

@@ -3,7 +3,7 @@ import "./BlogCart.css"
 
 const BlogCart = () => {
     return (
-        <div className="col-3">
+       
             <div className="blog-card">
                 <div className="card-image">
                     <img className="img-fluid" src="/public/blog-1.jpg" alt="" />
@@ -16,7 +16,7 @@ const BlogCart = () => {
                 <Link to='/' className="blog-button">Read More</Link>
                 </div>
             </div>
-        </div>
+      
     );
 };
 

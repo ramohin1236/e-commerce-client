@@ -56,7 +56,7 @@ const Header = () => {
                     </Link>
                 </div>
                 <div>
-                <Link className="d-flex align-items-center">
+                <Link to='/login' className="d-flex align-items-center">
                     <img src="/public/login.png" alt="" />
                     <p className="text-white mr-3 mb-0">Login<br /> Account</p>
                     </Link>

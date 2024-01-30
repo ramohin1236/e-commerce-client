@@ -10,6 +10,8 @@ import Store from './pages/Store/Store'
 import BlogsPages from './pages/BlogsPage/BlogsPages'
 import CompareProducts from './pages/Compare/CompareProducts'
 import WishList from './pages/WishList/WishList'
+import Login from './pages/Login/Login'
+import ForgotPassword from './pages/Login/ForgotPassword'
 // import {  HelmetProvider } from 'react-helmet-async';
 function App() {
 
@@ -30,6 +32,8 @@ function App() {
            <Route path='/blogs' element={<BlogsPages/>}/>
            <Route path='/compare' element={<CompareProducts/>}/>
            <Route path='/wish-list' element={<WishList/>}/>
+           <Route path='/login' element={<Login/>}/>
+           <Route path='/forgot-password' element={<ForgotPassword/>}/>
 
            </Route>
         

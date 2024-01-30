@@ -9,6 +9,7 @@ import Home from './pages/Home/Home'
 import Store from './pages/Store/Store'
 import BlogsPages from './pages/BlogsPage/BlogsPages'
 import CompareProducts from './pages/Compare/CompareProducts'
+import WishList from './pages/WishList/WishList'
 // import {  HelmetProvider } from 'react-helmet-async';
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
            <Route path='/store' element={<Store/>}/>
            <Route path='/blogs' element={<BlogsPages/>}/>
            <Route path='/compare' element={<CompareProducts/>}/>
+           <Route path='/wish-list' element={<WishList/>}/>
 
            </Route>
         

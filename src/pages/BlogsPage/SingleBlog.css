@@ -1,0 +1,26 @@
+:root{
+    --color-1c1c1b: #1c1c1b;
+    --color-777777: #777777;
+}
+.single-blog-cart h3{
+font-size: 26px;
+font-weight: 600;
+color: var(--color-1c1c1b);
+}
+.single-blog-cart a{
+    font-size: 18px;
+    color: var(--color-777777);
+    margin-bottom: 28px;
+}
+.sbi{
+    color: var(--color-777777); 
+}
+.single-blog-cart p{
+    color: #1c1c1b;
+    font-size: 18px;
+}
+
+.single-blog-cart img{
+    width: 50%;
+    height: 30%;
+}

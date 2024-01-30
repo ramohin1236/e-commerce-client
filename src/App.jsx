@@ -12,6 +12,9 @@ import CompareProducts from './pages/Compare/CompareProducts'
 import WishList from './pages/WishList/WishList'
 import Login from './pages/Login/Login'
 import ForgotPassword from './pages/Login/ForgotPassword'
+import Signup from './pages/Signup/Signup'
+import ResetPassword from './pages/ResetPassword/ResetPassword'
+import SingleBlog from './pages/BlogsPage/SingleBlog'
 // import {  HelmetProvider } from 'react-helmet-async';
 function App() {
 
@@ -30,10 +33,13 @@ function App() {
            <Route path='/contact' element={<Contact/>}/>
            <Route path='/store' element={<Store/>}/>
            <Route path='/blogs' element={<BlogsPages/>}/>
+           <Route path='/blogs/:id' element={<SingleBlog/>}/>
            <Route path='/compare' element={<CompareProducts/>}/>
            <Route path='/wish-list' element={<WishList/>}/>
            <Route path='/login' element={<Login/>}/>
+           <Route path='/signup' element={<Signup/>}/>
            <Route path='/forgot-password' element={<ForgotPassword/>}/>
+           <Route path='/reset-password' element={<ResetPassword/>}/>
 
            </Route>
         

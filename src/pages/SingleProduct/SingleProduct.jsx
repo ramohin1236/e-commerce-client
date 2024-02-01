@@ -1,22 +1,50 @@
+/* eslint-disable no-unused-vars */
 import { useState } from "react";
 import BreadCrump from "../../components/BreadCrump";
 import ProductCard from "../../components/FeaturedProduct/ProductCard";
 import Meta from "../../components/Meta/Meta";
 import "./SingleProduct.css";
 import ReactStars from "react-rating-stars-component";
-
+import ReactImageZoom from 'react-image-zoom';
 
 const SingleProduct = () => {
+    const props = {
+        //  width: 350,
+         height: 500, 
+         zoomWidth: 500, 
+         img: "https://media.wired.com/photos/64de7dca4a854832b16fd3c0/1:1/w_1500,h_1500,c_limit/Garmin-Epix-Pro-Gear.jpg"};
     const [orderProduct, setOrderProduct]=useState(true);
     return (
         <div>
              <Meta title={"Dyanamic product"} />
             <BreadCrump title="Dyanamic product" /> 
             <div className="main-product-wrapper py-5 home-wrapper-2">
- <div className="container-xxl">
+ <div className="container-xxl ">
     <div className="row">
         <div className="col-6">
-            
+            {/* main product image */}
+   <div className="main-product-image">
+   <div><ReactImageZoom {...props} /></div>
+    
+    
+    </div>  
+           {/* other product image  */}
+
+   <div className="other-product-image d-flex flex-wrap gap-15">
+<div>
+    <img src="https://media.wired.com/photos/64de7dca4a854832b16fd3c0/1:1/w_1500,h_1500,c_limit/Garmin-Epix-Pro-Gear.jpg" alt="" className="img-fluid small-pic"/>
+    </div> 
+<div>
+    <img src="https://media.wired.com/photos/64de7dca4a854832b16fd3c0/1:1/w_1500,h_1500,c_limit/Garmin-Epix-Pro-Gear.jpg" alt="" className="img-fluid small-pic"/>
+    </div> 
+<div>
+    <img src="https://media.wired.com/photos/64de7dca4a854832b16fd3c0/1:1/w_1500,h_1500,c_limit/Garmin-Epix-Pro-Gear.jpg" alt="" className="img-fluid small-pic"/>
+    </div> 
+<div>
+    <img src="https://media.wired.com/photos/64de7dca4a854832b16fd3c0/1:1/w_1500,h_1500,c_limit/Garmin-Epix-Pro-Gear.jpg" alt="" className="img-fluid small-pic"/>
+    </div> 
+   </div>
+
         </div>
         <div className="col-6">
 

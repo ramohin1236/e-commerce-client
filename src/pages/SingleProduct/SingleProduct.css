@@ -2,7 +2,26 @@
     --color-1c1c1b : #1c1c1b;
     --color-777777 : #777777;
 }
+/* description */
+.descriptions-wrapper h4{
+ font-size: 28px;
+ color: #1c1c1b;
+ margin-bottom: 10px;
+}
 
+.descriptions-wrapper p{
+font-size: 14px;
+color: var(--color-777777);
+}
+
+
+
+/* review */
+.reviews-wrapper h4, .reviews-wrapper h3{
+    font-size: 28px;
+    color: #1c1c1b;
+    margin-bottom: 10px;
+}
 .review-head {
 border-bottom: 2px solid rgba(0,0 , 0, 0.1);
 padding-bottom: 20px;

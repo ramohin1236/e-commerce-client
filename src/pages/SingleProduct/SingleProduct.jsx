@@ -30,8 +30,9 @@ const SingleProduct = () => {
 <div className="container-xxl">
     <div className="row">
         <div className="col-12">
+        <h4>Descriptions</h4>
             <div className="bg-white p-3">
-            <h4>Descriptions</h4>
+         
             <p >
  Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, cumque! Qui sequi totam voluptatibus impedit dolores optio, eos eveniet laudantium veniam porro molestiae ea. Aliquam voluptates sint iste rerum et!
  Assumenda repudiandae fuga impedit similique labore voluptatibus eveniet omnis accusamus rem, corporis nostrum ad quam est nesciunt dolores cupiditate sint eaque suscipit error excepturi alias.
@@ -45,6 +46,7 @@ const SingleProduct = () => {
 <div className="reviews-wrapper py-5 home-wrapper-2">
 <div className="container-xxl">
 <div className="row">
+    <h4>Reviews</h4>
     <div className="col-12">
   <div className="review-inner-wrapper">
   <div className="review-head d-flex justify-content-between align-items-end">

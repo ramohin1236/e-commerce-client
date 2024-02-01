@@ -1,0 +1,35 @@
+:root{
+    --color-1c1c1b : #1c1c1b;
+    --color-777777 : #777777;
+}
+
+.review-head {
+border-bottom: 2px solid rgba(0,0 , 0, 0.1);
+padding-bottom: 20px;
+}
+.review-inner-wrapper{
+background-color: white;
+padding: 30px;
+}
+.review-head h3{
+font-size: 18px;
+color: var(--color-1c1c1b);
+}
+.review-head p , .review-head a{
+font-size: 14px;
+color: var(--color-777777);
+}
+.review-form{
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1); 
+}
+.review-form h4{
+    font-size: 16px;
+    color: var(--color-777777);
+}
+.review:not(:last-child) {
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+.review p{
+  font-size: 14px;
+  color: var(--color-777777);
+}

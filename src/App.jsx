@@ -15,7 +15,14 @@ import ForgotPassword from './pages/Login/ForgotPassword'
 import Signup from './pages/Signup/Signup'
 import ResetPassword from './pages/ResetPassword/ResetPassword'
 import SingleBlog from './pages/BlogsPage/SingleBlog'
-// import {  HelmetProvider } from 'react-helmet-async';
+import TermsConditions from './pages/TermsConditions/TermsConditions'
+import ShippingPolicy from './pages/ShippingPolicy/ShippingPolicy'
+import PrivacyPolicy from './pages/PrivacyPolicy/PrivacyPolicy';
+import RefundPoliicy from './pages/Refund/RefundPoliicy';
+import SingleProduct from './pages/SingleProduct/SingleProduct'
+
+
+
 function App() {
 
 
@@ -32,6 +39,7 @@ function App() {
            <Route path='/about' element={<About/>}/>
            <Route path='/contact' element={<Contact/>}/>
            <Route path='/store' element={<Store/>}/>
+           <Route path='/store/product/:id' element={<SingleProduct/>}/>
            <Route path='/blogs' element={<BlogsPages/>}/>
            <Route path='/blogs/:id' element={<SingleBlog/>}/>
            <Route path='/compare' element={<CompareProducts/>}/>
@@ -40,6 +48,10 @@ function App() {
            <Route path='/signup' element={<Signup/>}/>
            <Route path='/forgot-password' element={<ForgotPassword/>}/>
            <Route path='/reset-password' element={<ResetPassword/>}/>
+           <Route path='/terms' element={<TermsConditions/>}/>
+           <Route path='/shipping' element={<ShippingPolicy/>}/>
+           <Route path='/privacy' element={<PrivacyPolicy/>}/>
+           <Route path='/refund' element={<RefundPoliicy/>}/>
 
            </Route>
         

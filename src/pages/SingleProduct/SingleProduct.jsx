@@ -1,19 +1,34 @@
 /* eslint-disable no-unused-vars */
 import { useState } from "react";
 import BreadCrump from "../../components/BreadCrump";
+import { IoGitCompareOutline } from "react-icons/io5";
+import { FaRegHeart } from "react-icons/fa";
 import ProductCard from "../../components/FeaturedProduct/ProductCard";
 import Meta from "../../components/Meta/Meta";
 import "./SingleProduct.css";
 import ReactStars from "react-rating-stars-component";
 import ReactImageZoom from 'react-image-zoom';
+import Color from './../../components/Color/Color';
 
 const SingleProduct = () => {
     const props = {
-        //  width: 350,
+         width: 400,
          height: 500, 
          zoomWidth: 500, 
          img: "https://media.wired.com/photos/64de7dca4a854832b16fd3c0/1:1/w_1500,h_1500,c_limit/Garmin-Epix-Pro-Gear.jpg"};
     const [orderProduct, setOrderProduct]=useState(true);
+
+// copy clipboard-----------
+   const copyToClipboard = (text) => {
+        console.log('text', text)
+        var textField = document.createElement('textarea')
+        textField.innerText = text
+        document.body.appendChild(textField)
+        textField.select()
+        document.execCommand('copy')
+        textField.remove()
+      }
+
     return (
         <div>
              <Meta title={"Dyanamic product"} />
@@ -21,6 +36,7 @@ const SingleProduct = () => {
             <div className="main-product-wrapper py-5 home-wrapper-2">
  <div className="container-xxl ">
     <div className="row">
+        {/* first column */}
         <div className="col-6">
             {/* main product image */}
    <div className="main-product-image">
@@ -46,7 +62,98 @@ const SingleProduct = () => {
    </div>
 
         </div>
+        {/* second column */}
         <div className="col-6">
+  <div className="main-product-details ">
+     <div className="bottom-border ">
+     <h3 className="title">Kids Watch is the Best Multi Color For Students</h3>
+     </div>
+
+     <div className="bottom-border py-3">
+<p className="price ">
+    $ 100
+</p>
+<div className="d-flex align-items-center gap-10">
+<ReactStars
+    count={5}
+    size={24}
+ 
+    value={3}
+    activeColor="#ffd700"
+  />
+  <p className="mb-0">(2 Reviews)</p>
+</div>
+<a href="#review" className="review-btn">Write a Review</a>
+</div>
+
+<div className="bottom-border py-3 ">
+<div className="d-flex gap-10 align-items-center py-2">
+    <h3 className="product-heading mb-0">Type: </h3> <p className="product-data mb-0">Watch</p>
+</div>
+<div className="d-flex gap-10 align-items-center mb-0 py-2">
+    <h3 className="product-heading mb-0">Brand: </h3> <p className="product-data mb-0">Wales</p>
+</div>
+<div className="d-flex gap-10 align-items-center mb-0 py-2">
+    <h3 className="product-heading mb-0">Category: </h3> <p className="product-data mb-0">Watch</p>
+</div>
+<div className="d-flex gap-10 align-items-center mb-0 py-2">
+    <h3 className="product-heading mb-0">Tags: </h3> <p className="product-data mb-0">Watch</p>
+</div>
+<div className="d-flex gap-10 align-items-center mb-0 py-2">
+    <h3 className="product-heading mb-0">Availability: </h3> <p className="product-data mb-0">In Stock</p>
+</div>
+<div className="d-flex gap-10 flex-column mt-2 mb-3 py-2">
+    <h3 className="product-heading mb-0">Size: </h3> 
+    <div className="d-flex flex-wrap gap-15">
+<span className="badge border border-11 bg-white text-dark border-secondary">S</span>
+<span className="badge border border-11 bg-white text-dark border-secondary">M</span>
+<span className="badge border border-11 bg-white text-dark border-secondary">XL</span>
+<span className="badge border border-11 bg-white text-dark border-secondary">XXL</span>
+
+    </div>
+</div>
+<div className="d-flex gap-10 flex-column mb-0 py-2">
+    <h3 className="product-heading mb-0">Color: </h3>
+    <Color/>
+</div>
+<div className="d-flex align-items-center gap-15 flex-row mb-0 py-2">
+    <h3 className="product-heading mb-0">Quantity: </h3>
+    <div className="">
+ <input className="form-control" type="number" min={1} max={10} name="" id="" style={{"width": "100px"}}/>
+    </div>
+
+    <div className="d-flex align-items-center gap-30">
+    <button className="button-3" type="submit">Add To Card</button>
+<button to='/signup' className="button-2">Buy It Now</button>
+    </div>
+</div>
+
+<div className="d-flex align-items-center gap-15 mt-3">
+    <div >
+      <a  href=""> <IoGitCompareOutline className="fs-4 mx-2 my-3"/>Add To Wishlist</a>  
+    </div>
+    <div>
+      <a href=""><FaRegHeart className="fs-4 mx-2 my-3"/>Add To Compare</a>  
+    </div>
+</div>
+
+{/* accordian */}
+<div className="d-flex gap-10 align-items-center py-2">
+    <h3 className="product-heading mb-0">Shipping & Returns: </h3> <p className="product-data mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. <br />  animi aperiam accusamus minus. <b>5-7 bussiness days</b></p>
+</div>
+<div  className="d-flex  gap-10 align-items-center my-2">
+    <h3 className="product-heading mb-0">Copy Product Link: </h3>
+    <a href="javascript:void(0)"
+    onClick={()=>{copyToClipboard("https://media.wired.com/photos/64de7dca4a854832b16fd3c0/1:1/w_1500,h_1500,c_limit/Garmin-Epix-Pro-Gear.jpg")}}
+    >https://media.wired.com/photos/64de7dca4a854832b16fd3c0/1:1/w_1500,h_1500,c_limit/Garmin-Epix-Pro-Gear.jpg</a>
+     
+</div>
+</div>
+
+
+  </div>
+
+
 
         </div>
     </div>
@@ -54,7 +161,7 @@ const SingleProduct = () => {
             </div>
 
             {/* descriptions */}
-<div className="descriptions-wrapper py-5 home-wrapper-2">
+<div  className="descriptions-wrapper py-5 home-wrapper-2">
 <div className="container-xxl">
     <div className="row">
         <div className="col-12">
@@ -74,7 +181,7 @@ const SingleProduct = () => {
 <div className="reviews-wrapper py-5 home-wrapper-2">
 <div className="container-xxl">
 <div className="row">
-    <h4>Reviews</h4>
+    <h4 id="review">Reviews</h4>
     <div className="col-12">
   <div className="review-inner-wrapper">
   <div className="review-head d-flex justify-content-between align-items-end">
@@ -103,7 +210,7 @@ const SingleProduct = () => {
 </div>
 
 {/* *******************form****************** */}
-  <div className="review-form py-4">
+  <div  className="review-form py-4">
     <h4 className="mb-2">Customer Reviews</h4>
   <form action="" className='d-flex flex-column gap-15 '>
   <div>

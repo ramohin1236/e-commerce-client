@@ -11,10 +11,11 @@
 
 }
 .main-product-image .js-image-zoom__zoomed-image{
-    left:450px !important;
+    left:130px !important;
     padding: 10px;
     background-color: white;
     border-radius: 10px;
+    z-index: 1;
 }
 .main-product-image >div{
    border: 2px solid rgba(0, 0, 0, 0.25); 
@@ -24,6 +25,47 @@
  height: 500px !important;
  object-fit: cover;
 }
+
+/* -------------main products details----- */
+.main-product-details{
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+
+}
+.main-product-details a{
+   font-size: 16px;
+   color: var(--color-777777);
+
+}
+.product-heading{
+ font-size: 18px;
+ color: var(--color-1c1c1b);
+}
+
+.product-data{
+font-size: 16px;
+color: var(--color-777777);
+margin-bottom: 0px;
+}
+.main-product-details h3.title{
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--color-1c1c1b);
+    margin-bottom: 10px;
+}
+.main-product-details p.price{
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: var(--color-1c1c1b);
+}
+.bottom-border{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+}
+
 /* other product images */
 .other-product-image{
     background-color: white;
@@ -93,4 +135,8 @@ color: var(--color-777777);
 .review p{
   font-size: 14px;
   color: var(--color-777777);
+}
+.review-btn{
+    color: var(--color-777777);
+    font-size: 15px;
 }

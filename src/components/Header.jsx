@@ -62,7 +62,7 @@ const Header = () => {
                     </Link>
                 </div>
                 <div>
-                <Link className="d-flex align-items-center gap-10">
+                <Link to="/cart" className="d-flex align-items-center gap-10">
            
                 <img src="/public/cart.png" alt="" />
                     <div className="d-flex flex-column">

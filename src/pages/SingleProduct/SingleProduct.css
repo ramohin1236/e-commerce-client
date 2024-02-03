@@ -1,10 +1,10 @@
 :root{
     --color-1c1c1b : #1c1c1b;
-    --color-777777 : #777777;
+    --color-777777 : #312f2f;
 }
 /* product image */
 .main-product-image{
-    padding: 20px;
+    padding: 30px;
     background-color: white;
     border-radius: 10px;
    
@@ -28,7 +28,7 @@
 
 /* -------------main products details----- */
 .main-product-details{
-    padding: 20px;
+    padding: 30px 20px;
     background-color: white;
     border-radius: 10px;
 

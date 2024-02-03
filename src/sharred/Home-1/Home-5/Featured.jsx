@@ -11,10 +11,13 @@ const Featured = () => {
                 <h2 className='section-heading'>Our Featured Collection</h2>
              </div> 
 
+            <div className="d-flex flex-wrap ">
+            <ProductCard/>
              <ProductCard/>
              <ProductCard/>
              <ProductCard/>
-             <ProductCard/>
+            
+            </div>
              
            </div>
         </div>

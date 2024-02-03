@@ -9,7 +9,10 @@ const Special = () => {
                  Special Product
                </div>
             </div>
-          <div className='row'>
+          <div className='row gap-10'>
+            <SpecialProduct/>
+            <SpecialProduct/>
+            <SpecialProduct/>
             <SpecialProduct/>
             <SpecialProduct/>
             <SpecialProduct/>

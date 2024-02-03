@@ -1,0 +1,35 @@
+:root{
+    --color-1d1c1c: #1d1c1c;
+    --color-777777: #777777;
+}
+.cart-header, .cart-data{
+
+    border-bottom:  1px solid #eaeaea;
+
+}
+.cart-col-1 img{
+    width: 100%;
+    height: 100%;
+}
+.cart-col-1 p{
+    color: var(--color-777777);
+    font-size: 14px;
+}
+.cart-header h4{
+    font-size: 18px;
+    color: var(--color-777777);
+}
+
+.cart-col-1{
+    width: 40%;
+    
+}
+.cart-col-2{
+    width: 10%;
+}
+.cart-col-3{
+    width: 15%;
+}
+.cart-col-4{
+    width: 15%;
+}

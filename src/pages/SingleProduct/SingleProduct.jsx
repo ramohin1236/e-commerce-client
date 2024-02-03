@@ -86,7 +86,7 @@ const SingleProduct = () => {
 <a href="#review" className="review-btn">Write a Review</a>
 </div>
 
-<div className="bottom-border py-3 ">
+<div className="py-3 ">
 <div className="d-flex gap-10 align-items-center py-2">
     <h3 className="product-heading mb-0">Type: </h3> <p className="product-data mb-0">Watch</p>
 </div>
@@ -138,14 +138,14 @@ const SingleProduct = () => {
 </div>
 
 {/* accordian */}
-<div className="d-flex gap-10 align-items-center py-2">
+<div className="d-flex flex-column gap-10 my-3">
     <h3 className="product-heading mb-0">Shipping & Returns: </h3> <p className="product-data mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. <br />  animi aperiam accusamus minus. <b>5-7 bussiness days</b></p>
 </div>
-<div  className="d-flex  gap-10 align-items-center my-2">
+<div  className="d-flex  gap-10 align-items-center my-3">
     <h3 className="product-heading mb-0">Copy Product Link: </h3>
     <a href="javascript:void(0)"
     onClick={()=>{copyToClipboard("https://media.wired.com/photos/64de7dca4a854832b16fd3c0/1:1/w_1500,h_1500,c_limit/Garmin-Epix-Pro-Gear.jpg")}}
-    >https://media.wired.com/photos/64de7dca4a854832b16fd3c0/1:1/w_1500,h_1500,c_limit/Garmin-Epix-Pro-Gear.jpg</a>
+    >Copy Product Link</a>
      
 </div>
 </div>

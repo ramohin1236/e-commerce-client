@@ -13,14 +13,15 @@ const ChekOut = () => {
             <h3 className="website-name">CNC jullycutting</h3>
             <nav style={{"--bs-breadcrumb-divider": '>'}} aria-label="breadcrumb">
   <ol className="breadcrumb">
-    <li className="breadcrumb-item"><Link className="text-dark" to="/cart">Cart</Link></li> &nbsp;/
-    <li className="breadcrumb-item active" aria-current="page">Information</li>&nbsp;/
-    <li className="breadcrumb-item active">Shipping</li> &nbsp;/
-    <li className="breadcrumb-item active" aria-current="page">Payment</li>
+    <li className="breadcrumb-item total-price "><Link className="text-dark" to="/cart">Cart</Link></li> &nbsp;/
+    <li className="breadcrumb-item total-price active" aria-current="page">Information</li>&nbsp;/
+    <li className="breadcrumb-item total-price active">Shipping</li> &nbsp;/
+    <li className="breadcrumb-item total-price active" aria-current="page">Payment</li>
   </ol>
 </nav>
-<h4 className="title">Contact Information</h4>
+<h4 className="title total">Contact Information</h4>
 <p className="user-details">Robiul Awal Mohin &nbsp;(mohinr26@gmail.com)</p>
+<h4 className="mb-3">Shipping Address</h4>
 {/* form */}
 <form action="" className="d-flex gap-15 flex-wrap justify-content-between">
 <div className="w-100">
@@ -64,14 +65,14 @@ const ChekOut = () => {
            </div>
 
 <div>
-<h5 className="title">asfa</h5>
-<p>a/ #agff</p>
+<h5 className="title total">asfa</h5>
+<p className="total-price">a/ #agff</p>
 </div>
 
 
            </div>
            <div className="flex-grow-1">
-            <h5 >$100</h5>
+            <h5 className="total">$100</h5>
             </div>
             </div> 
                
@@ -81,18 +82,18 @@ const ChekOut = () => {
 
 <div className="bottom-border py-4">
 <div className="d-flex justify-content-between align-items-center">
-  <p className="mb-0">Subtotal</p>
-  <p className="mb-0">$10000</p>
+  <p className="mb-0 total">Subtotal</p>
+  <p className="mb-0 total-price">$10000</p>
         </div>
 <div className="d-flex justify-content-between align-items-center">
-  <p>Shipping</p>
-  <p>$10000</p>
+  <p className="mb-0 total">Shipping</p>
+  <p className="mb-0 total-price">$10000</p>
         </div>
 </div>
 
         <div className="d-flex justify-content-between align-items-center bottom-border py-4">
-  <h4>Total</h4>
-  <h5>$10000</h5>
+  <h4 className="total">Total</h4>
+  <h5 className="total-price">$10000</h5>
         </div>
     </div>
   </div>

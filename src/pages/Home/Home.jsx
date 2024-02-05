@@ -8,13 +8,13 @@ import Featured from '../../sharred/Home-1/Home-5/Featured';
 import Special from '../../sharred/Home-5/Special';
 import Popular from '../../sharred/Home-6/Popular';
 import Famous from '../../sharred/Home-7/Famous';
+import Container from '../../components/Container/Container';
 
 
 const Home = () => {
     return (
         <div>
-          <section className="home-wrapper-1 py-5">
-           <div className="container-xxl">
+            <Container class1="home-wrapper-1 py-5">
             <div className="row">
                 <div className="col-6">
                 <div className="main-banner position-relative">
@@ -81,13 +81,20 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-           </div>
+            </Container>
+            <Container class1="home-wrapper-2 py-5">
+               <HFirst/>
+            </Container>
+          <section className="home-wrapper-1 py-5">
+           {/* <div className="container-xxl">
+           
+           </div> */}
           
           </section>
               {/* section first */}
-          <section className='home-wrapper-2 py-5'>
+          {/* <section className='home-wrapper-2 py-5'>
               <HFirst/>
-          </section>
+          </section> */}
             {/* Featured section */}
             <section className='featured-wrapper py-5 home-wrapper-2'>
               <Featured/>

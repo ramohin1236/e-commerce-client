@@ -1,3 +1,7 @@
+:root{
+    --clolor-1c1c1b : #1c1c1b;
+    --clolor-777777 : #777777;
+}
 .btn-3{
     background-color: rgb(66, 90, 247);
     padding: 15px;
@@ -12,4 +16,12 @@
 .badge-img{
     height: 100%;
     width: 100%;
+}
+.total{
+    font-size: 18px;
+color: var(--clolor-1c1c1b)
+}
+.total-price{
+    font-size: 20px;
+color: var(--clolor-777777);
 }

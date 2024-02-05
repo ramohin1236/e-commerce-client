@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import BreadCrump from "../../components/BreadCrump";
 import Meta from "../../components/Meta/Meta";
+import Container from "../../components/Container/Container";
+import CustomeInput from "../../components/CustomeInput/CustomeInput";
 
 
 const ForgotPassword = () => {
@@ -8,24 +10,17 @@ const ForgotPassword = () => {
         <div>
                <Meta title={"Forgot-password"} />
             <BreadCrump title="Forgot-password" /> 
-            <div className="login-wrapper py-5 home-wrapper-2">
-   <div className="container-xxl">
-   <div className="row">
+            <Container class1="login-wrapper py-5 home-wrapper-2">
+            <div className="row">
     <div className="col-12">
    <div className="auth-card">
    <form>
-    {/* <img className='p-card-img' src="/public/watch-2.png" alt="" /> */}
-    <h1 className="login-h1 mb-3 fw-normal text-center">Reset Your Password</h1>
-    <p className="text-center">We will send you an email to reset your password</p>
+    <h1 className="login-h1 mb-3 fw-normal text-center">Forget Your Password</h1>
+    <p className="text-center">We will send you an email to forget your password</p>
 
-    <div className="form-floating mb-3">
-      <input type="email" name="email" className="form-control" id="floatingInput" placeholder="name@example.com"/>
-      <label htmlFor="floatingInput">Email address</label>
-    </div>
-    {/* <div className="form-floating mb-3">
-      <input type="password" name="password" className="form-control " id="floatingPassword" placeholder="Password"/>
-      <label htmlFor="floatingPassword">Password</label>
-    </div> */}
+<CustomeInput  type="email" name="email" className="form-control" id="floatingInput" placeholder="email@.com"/>
+   
+   
     
  
 
@@ -35,19 +30,12 @@ const ForgotPassword = () => {
 
 </div>
 
-    {/* <div className="checkbox mb-3">
-      <label>
-        <input type="checkbox" value="remember-me"/> Remember me
-      </label>
-    </div>
    
-    <p className="mt-5 mb-3 text-muted">© 2017–2021</p> */}
   </form>
    </div>
     </div>
    </div>
-   </div>
-    </div>
+    </Container>
         </div>
     );
 };

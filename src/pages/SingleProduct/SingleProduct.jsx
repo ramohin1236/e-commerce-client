@@ -9,6 +9,8 @@ import "./SingleProduct.css";
 import ReactStars from "react-rating-stars-component";
 import ReactImageZoom from 'react-image-zoom';
 import Color from './../../components/Color/Color';
+import Container from "../../components/Container/Container";
+
 
 const SingleProduct = () => {
     const props = {
@@ -33,9 +35,8 @@ const SingleProduct = () => {
         <div>
              <Meta title={"Dyanamic product"} />
             <BreadCrump title="Dyanamic product" /> 
-            <div className="main-product-wrapper py-5 home-wrapper-2">
- <div className="container-xxl ">
-    <div className="row">
+            <Container class1="main-product-wrapper py-5 home-wrapper-2">
+            <div className="row">
         {/* first column */}
         <div className="col-6">
             {/* main product image */}
@@ -157,13 +158,11 @@ const SingleProduct = () => {
 
         </div>
     </div>
- </div>
-            </div>
+            </Container>
 
             {/* descriptions */}
-<div  className="descriptions-wrapper py-5 home-wrapper-2">
-<div className="container-xxl">
-    <div className="row">
+<Container  class1="descriptions-wrapper py-5 home-wrapper-2">
+<div className="row">
         <div className="col-12">
         <h4>Descriptions</h4>
             <div className="bg-white p-3">
@@ -175,11 +174,9 @@ const SingleProduct = () => {
             </div>
         </div>
     </div>
-</div>
-</div>
+</Container>
 {/* reviews */}
-<div className="reviews-wrapper py-5 home-wrapper-2">
-<div className="container-xxl">
+<Container class1="reviews-wrapper py-5 home-wrapper-2">
 <div className="row">
     <h4 id="review">Reviews</h4>
     <div className="col-12">
@@ -257,15 +254,14 @@ const SingleProduct = () => {
   </div>
     </div>
 </div>
-</div>
-</div>
+</Container>
 
             {/* product */}
-            <section className='featured-wrapper py-5 home-wrapper-2'>
-            <div className="container-xxl">
+            <Container class1='featured-wrapper py-5 home-wrapper-2'>
+         
             <ProductCard/>
-            </div>
-          </section>
+         
+          </Container>
         </div>
     );
 };

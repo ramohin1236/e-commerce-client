@@ -23,6 +23,7 @@
     height: 400px;
     border-radius: 15px;
 }
+
 .auth-card .form-control{
     height: 50px;
     background-color: var(--color-f5f5f7);

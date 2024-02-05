@@ -1,4 +1,6 @@
 import BreadCrump from "../../components/BreadCrump";
+import Container from "../../components/Container/Container";
+import CustomeInput from "../../components/CustomeInput/CustomeInput";
 import Meta from "../../components/Meta/Meta";
 
 
@@ -7,8 +9,8 @@ const ResetPassword = () => {
         <div>
               <Meta title={"Reset-Password"} />
             <BreadCrump title="Reset-Password" /> 
-            <div className="login-wrapper py-5 home-wrapper-2">
- <div className="container-xxl">
+            <Container class1="login-wrapper py-5 home-wrapper-2">
+
  <div className="row">
    <div className="col-12">
    <div className="auth-card">
@@ -16,16 +18,11 @@ const ResetPassword = () => {
     {/* <img className='p-card-img' src="/public/watch-2.png" alt="" /> */}
     <h1 className="login-h1 mb-3 fw-normal text-center">Reset Password</h1>
 
-    
+    <CustomeInput type="password" name="password" className="form-control" id="floatingInput" placeholder="name@example.com"/>
+    <CustomeInput type="password" name="confirm-password" className="form-control " id="floatingPassword" placeholder="Password"/>
   
-    <div className="form-floating mb-3">
-      <input type="password" name="password" className="form-control" id="floatingInput" placeholder="name@example.com"/>
-      <label htmlFor="floatingInput">password </label>
-    </div>
-    <div className="form-floating mb-3">
-      <input type="password" name="confirm-password" className="form-control " id="floatingPassword" placeholder="Password"/>
-      <label htmlFor="floatingPassword">Confirm Password</label>
-    </div>
+    
+    
     
         {/* <p>Already have an account? &nbsp;&nbsp;<Link className="fs-6" to='/login'>Login</Link></p> */}
 
@@ -45,8 +42,8 @@ const ResetPassword = () => {
    </div>
     </div>
    </div>
- </div>
-    </div>
+
+    </Container>
         </div>
     );
 };

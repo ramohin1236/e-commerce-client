@@ -3,15 +3,15 @@ import Meta from './../../components/Meta/Meta';
 import BreadCrump from './../../components/BreadCrump';
 import { RxCross2 } from "react-icons/rx";
 import Color from '../../components/Color/Color';
+import Container from '../../components/Container/Container';
 const CompareProducts = () => {
     return (
         <div>
             <Meta title={"Compare Products"} />
             <BreadCrump title="Compare Products" />
 
-            <div className='compare-product-wrapper py-5 home-wrapper-2'>
-            <div className='container-xxl'>
-    <div className='row'>
+            <Container class1='compare-product-wrapper py-5 home-wrapper-2'>
+            <div className='row'>
    <div className='col-3'>
       <div className='compare-product-card position-relative'>
       <RxCross2  className="fs-4 position-absolute cross-icon"/>
@@ -110,8 +110,7 @@ const CompareProducts = () => {
    </div>
 
     </div>
-            </div>
-            </div>
+            </Container>
         </div>
     );
 };

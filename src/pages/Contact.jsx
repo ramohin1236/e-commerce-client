@@ -6,6 +6,7 @@ import { FaHome } from "react-icons/fa";
 import { IoCall } from "react-icons/io5";
 import { MdEmail } from "react-icons/md";
 import { IoInformationOutline } from "react-icons/io5";
+import Container from '../components/Container/Container';
 
 
 const Contact = () => {
@@ -14,9 +15,8 @@ const Contact = () => {
         <div>
                 <Meta title={"Contact"} />
             <BreadCrump title="Contact" />
-            <div className="contact-wrapper py-5 home-wrapper-2">
-      <div className="container-xxl">
-        <div className="row">
+            <Container class1="contact-wrapper py-5 home-wrapper-2">
+            <div className="row">
             <div className="col-12">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2583.175391636578!2d90.47884861821272!3d23.705919931354853!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b778688fdc1f%3A0xfa8444d82c76c89b!2sSTL%20Garments!5e0!3m2!1sen!2sbd!4v1706541957338!5m2!1sen!2sbd" width="600" height="450" className="boreder-0 w-100"  allowFullScreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
@@ -77,8 +77,7 @@ const Contact = () => {
     </div>
             </div>
         </div>
-      </div>
-            </div>
+            </Container>
         </div>
     );
 };

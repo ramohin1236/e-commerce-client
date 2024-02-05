@@ -2,6 +2,7 @@ import { RxCross2 } from "react-icons/rx";
 import BreadCrump from "../../components/BreadCrump";
 import Meta from "../../components/Meta/Meta";
 import './WishList.css';
+import Container from "../../components/Container/Container";
 
 const WishList = () => {
     return (
@@ -9,9 +10,8 @@ const WishList = () => {
             <Meta title={"Wish-list"} />
             <BreadCrump title="Wish-list" />
 
-            <div className="wishlist-wrapper home-wrapper-2 py-5">
-   <div className="container-xxl">
-      <div className="row">
+            <Container class1="wishlist-wrapper home-wrapper-2 py-5">
+            <div className="row">
         {/* 1st */}
         <div className="col-3">
              <div className='compare-product-card position-relative'>
@@ -67,8 +67,7 @@ const WishList = () => {
       </div>
         </div>
       </div>
-   </div>
-            </div>
+            </Container>
         </div>
     );
 };

@@ -3,13 +3,14 @@ import Meta from './../../components/Meta/Meta';
 import BreadCrump from './../../components/BreadCrump';
 import { FaTrash } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import Container from "../../components/Container/Container";
 
 const Cart = () => {
     return (
         <div>
                 <Meta title={"Cart"} />
             <BreadCrump title="Cart" />
-            <section className="cart-wrapper home-wrapper-2 py-5">
+            <Container class1="cart-wrapper home-wrapper-2 py-5">
                 <div className="container-xxl">
 <div className="row">
   <div className="col-12">
@@ -113,7 +114,7 @@ const Cart = () => {
 </div>
 
                 </div>
-                </section> 
+                </Container> 
         </div>
     );
 };

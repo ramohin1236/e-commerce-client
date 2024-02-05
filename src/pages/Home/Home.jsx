@@ -82,53 +82,47 @@ const Home = () => {
                 </div>
             </div>
             </Container>
+
+            {/* first section */}
             <Container class1="home-wrapper-2 py-5">
                <HFirst/>
             </Container>
-          <section className="home-wrapper-1 py-5">
-           {/* <div className="container-xxl">
-           
-           </div> */}
-          
-          </section>
-              {/* section first */}
-          {/* <section className='home-wrapper-2 py-5'>
-              <HFirst/>
-          </section> */}
-            {/* Featured section */}
-            <section className='featured-wrapper py-5 home-wrapper-2'>
-              <Featured/>
-          </section>
 
-          {/* famous section */}
-          <section className='famous-wrapper py-5 home-wrapper-2'>
-              <Famous/>
-          </section>
-          {/* special secton */}
-           <section className='special-section py-5 home-wrapper-2'>
-                 <Special/>
-           </section>
+             {/* Featured section */}
+            <Container class1="home-wrapper-2 py-5">
+               <Featured/>
+            </Container>
 
- {/* Popular section */}
- <section className='popular-wrapper py-5 home-wrapper-2'>
-              <Popular/>
-          </section>
+                  {/* famous section */} 
+            <Container class1="home-wrapper-2 py-5">
+                    <Famous/>
+            </Container>
 
-              {/* section second */}
-          <section className='home-wrapper-2 py-5'>
-              <HSecond/>
-          </section>
+                  {/* special secton */}
+            <Container class1="home-wrapper-2 py-5">
+                   <Special/>
+            </Container>
 
-          {/* first marquee */}
-          <section className='marque-wrapper py-5'>
-             <Marque/>
-          </section>
-          
-          
-          {/* blog section */}
-          <section className='blog-wrapper py-5 home-wrapper-2'>
-             <Blog/>
-          </section>
+                   {/* Popular section */}
+            <Container class1="home-wrapper-2 py-5">
+                <Popular/>
+            </Container>
+
+                     {/* section second */}
+            <Container class1="home-wrapper-2 py-5">
+                 <HSecond/>
+            </Container>
+
+                     {/* first marquee */}
+            <Container class1="home-wrapper-2 py-5">
+                 <Marque/>
+            </Container>
+            
+                      {/* blog section */}
+            <Container class1="home-wrapper-2 py-5">
+                  <Blog/>
+            </Container>
+      
         </div>
     );
 };

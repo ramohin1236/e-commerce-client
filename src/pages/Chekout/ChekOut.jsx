@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
 import "./ChekOut.css";
 import { IoMdArrowRoundBack } from "react-icons/io";
+import Container from "../../components/Container/Container";
 const ChekOut = () => {
     return (
-        <div className="py-4">
-            <div className="chekout-wrapper">
+    
+            <Container class1="chekout-wrapper home-wrapper-2 py-5">
 <div className="container-xxl">
   <div className="row">
     {/* left side */}
@@ -98,8 +99,8 @@ const ChekOut = () => {
     </div>
   </div>
 </div>
-            </div>
-        </div>
+            </Container>
+     
     );
 };
 

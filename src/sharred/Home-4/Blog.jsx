@@ -1,9 +1,16 @@
 import './Blog.css';
 import BlogCart from '../../components/BlogCart/BlogCart';
 import './Blog.css';
+import Container from '../../components/Container/Container';
+import Meta from './../../components/Meta/Meta';
+import BreadCrump from './../../components/BreadCrump';
 const Blog = () => {
     return (
-        <div className='container-xxl'>
+     <>
+     <Meta title={"Cart"}/>
+     <BreadCrump title="Cart"/>
+       <Container class1="blog-wrapper home-wrapper-2 py-5">
+         <div className='container-xxl'>
            
        
            <div className="row">
@@ -27,6 +34,8 @@ const Blog = () => {
              </div>
            </div>
         </div>
+       </Container>
+     </>
     );
 };
 

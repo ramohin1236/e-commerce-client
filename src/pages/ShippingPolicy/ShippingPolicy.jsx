@@ -1,4 +1,5 @@
 import BreadCrump from "../../components/BreadCrump";
+import Container from "../../components/Container/Container";
 import Meta from "../../components/Meta/Meta";
 import "./ShippingPolicy.css";
 
@@ -7,16 +8,16 @@ const ShippingPolicy = () => {
         <div>
              <Meta title={"Shipping-Policy"} />
             <BreadCrump title="Shipping-Policy" /> 
-            <section className="policy-wrapper py-5 home-wrpper-2">
-                <div className="container-xxl">
+            <Container class1="policy-wrapper py-5 home-wrpper-2">
+          
         <div className="row">
             <div className="col-12">
              <div className="policy">
                 </div>   
             </div>
         </div>
-                </div>
-                </section>  
+            
+                </Container>  
         </div>
     );
 };

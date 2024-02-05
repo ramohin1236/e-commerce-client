@@ -1,0 +1,15 @@
+.btn-3{
+    background-color: rgb(66, 90, 247);
+    padding: 15px;
+    border-radius: 15px;
+    color: white;
+}
+:hover.btn-3{
+    background-color: rgb(9, 17, 228);
+    color: white;
+}
+
+.badge-img{
+    height: 100%;
+    width: 100%;
+}

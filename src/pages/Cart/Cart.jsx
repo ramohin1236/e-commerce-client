@@ -106,7 +106,7 @@ const Cart = () => {
    </div>
    <div className="d-flex flex-column align-items-end"><h4>SubTotal: $1000</h4>
    <p>Taxes and shippiing calculate at cheakout</p>
-   <Link className="button-2 w-30" to="/chekout">Chekout</Link>
+   <Link className="btn-3 w-30" to="/chekout">Chekout</Link>
    </div>
    </div>
   </div>

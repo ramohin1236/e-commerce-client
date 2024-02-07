@@ -13,8 +13,8 @@ const ProductCard = () => {
       
          <div className='col-3'>
          
-           <Link to={`${location.pathname == "/"
-           ? "/store/product/:id" : location.pathname == "/store/product/:id" ? "/store/product/:id" : ":id"}`} className='product-card position-relative'>
+           <Link to={`${location.pathname == "/store"
+           ? "/store/product/:id" : location.pathname == "/store/product/:id" ? "/store/product/:id" : "/store/product/:id"}`} className='product-card position-relative'>
            <div className="card-product" >
            <div className="card-image">
                     <img className="img-fluid" src="https://media.wired.com/photos/64de7dca4a854832b16fd3c0/1:1/w_1500,h_1500,c_limit/Garmin-Epix-Pro-Gear.jpg" alt="" />

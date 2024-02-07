@@ -23,7 +23,7 @@ const Cart = () => {
      <div className="cart-data py-3 d-flex justify-content-between align-items-center mb-2">
        <div className="cart-col-1 d-flex align-items-center gap-15">
         <div className="w-25">
-            <img className="img-fluid" src="/public/watch-1.png" alt="" />
+            <img className="img-fluid" src="https://images.othoba.com/images/thumbs/0604005_new-stylish-olevs-leather-quartz-movement-watch-for-men_300.webp" alt="" />
         </div>
         <div className="w-75">
             <h5 >fdas</h5>
@@ -50,7 +50,7 @@ const Cart = () => {
      <div className="cart-data py-3 d-flex justify-content-between align-items-center mb-2">
        <div className="cart-col-1 d-flex align-items-center gap-15">
         <div className="w-25">
-            <img className="img-fluid" src="/public/watch-1.png" alt="" />
+            <img className="img-fluid" src="https://images.othoba.com/images/thumbs/0604005_new-stylish-olevs-leather-quartz-movement-watch-for-men_300.webp" alt="" />
         </div>
         <div className="w-75">
             <h5 >fdas</h5>
@@ -76,7 +76,7 @@ const Cart = () => {
      <div className="cart-data py-3 d-flex justify-content-between align-items-center mb-2">
        <div className="cart-col-1 d-flex align-items-center gap-15">
         <div className="w-25">
-            <img className="img-fluid" src="/public/watch-1.png" alt="" />
+            <img className="img-fluid" src="https://images.othoba.com/images/thumbs/0604005_new-stylish-olevs-leather-quartz-movement-watch-for-men_300.webp" alt="" />
         </div>
         <div className="w-75">
             <h5 >fdas</h5>

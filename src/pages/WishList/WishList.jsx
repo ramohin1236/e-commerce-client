@@ -17,7 +17,7 @@ const WishList = () => {
              <div className='compare-product-card position-relative'>
       <RxCross2  className="fs-4 position-absolute cross-icon"/>
         <div className='product-card-image'>
-  <img className='p-card-img' src="/public/watch-2.png" alt="" />
+  <img className='p-card-img' src="https://images.othoba.com/images/thumbs/0604005_new-stylish-olevs-leather-quartz-movement-watch-for-men_300.webp" alt="" />
         </div>
 
 <div className="compare-products-details">
@@ -35,7 +35,7 @@ const WishList = () => {
              <div className='compare-product-card position-relative'>
       <RxCross2  className="fs-4 position-absolute cross-icon"/>
         <div className='product-card-image'>
-  <img className='p-card-img' src="/public/watch-2.png" alt="" />
+  <img className='p-card-img' src="https://images.othoba.com/images/thumbs/0604005_new-stylish-olevs-leather-quartz-movement-watch-for-men_300.webp" alt="" />
         </div>
 
 <div className="compare-products-details">
@@ -53,7 +53,7 @@ const WishList = () => {
              <div className='compare-product-card position-relative'>
       <RxCross2  className="fs-4 position-absolute cross-icon"/>
         <div className='product-card-image'>
-  <img className='p-card-img' src="/public/watch-2.png" alt="" />
+  <img className='p-card-img' src="https://images.othoba.com/images/thumbs/0604005_new-stylish-olevs-leather-quartz-movement-watch-for-men_300.webp" alt="" />
         </div>
 
 <div className="compare-products-details">

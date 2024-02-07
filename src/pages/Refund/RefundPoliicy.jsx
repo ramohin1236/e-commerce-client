@@ -9,7 +9,7 @@ const RefundPoliicy = () => {
              <Meta title={"Refund-policy"} />
             <BreadCrump title="Refund-policy" />
             <Container class1="policy-wrapper py-5 home-wrpper-2">
-             
+
         <div className="row">
             <div className="col-12">
              <div className="policy">

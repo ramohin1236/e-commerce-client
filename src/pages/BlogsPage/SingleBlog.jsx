@@ -24,7 +24,7 @@ const SingleBlog = () => {
           A Beautiful Sunday Morning Renaissance
       </h3>
       <div className="text-center">
-      <img src="/public/watch-1.png" alt="" />
+      <img src="https://media.wired.com/photos/64de7dca4a854832b16fd3c0/1:1/w_1500,h_1500,c_limit/Garmin-Epix-Pro-Gear.jpg" alt="" />
       </div>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque nihil ipsam quia deserunt! Unde voluptas cupiditate possimus totam suscipit, culpa perferendis eius obcaecati in, quisquam illo provident fugit hic expedita!
       Quo dignissimos doloremque illo incidunt, eos quidem enim vitae non sit hic quasi necessitatibus, tenetur laudantium. Quisquam minus voluptatem rem pariatur exercitationem? Nostrum autem vel ut non, dolor aspernatur suscipit.

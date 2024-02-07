@@ -18,7 +18,7 @@ const Home = () => {
             <div className="row">
                 <div className="col-6">
                 <div className="main-banner position-relative">
-                       <img src="/public/iPhone-15-2.jpg" alt=""  className='img-fluid rounded-3'/>
+                       <img src="https://media.wired.com/photos/64de7dca4a854832b16fd3c0/1:1/w_1500,h_1500,c_limit/Garmin-Epix-Pro-Gear.jpg" alt=""  className='img-fluid rounded-3'/>
                        <div className="main-banner-content position-absolute text-white">
                         <h4>High quality tempared glass panel</h4>
                         <h5>Gazi Smiss - B207</h5>
@@ -35,7 +35,7 @@ const Home = () => {
                    <div className='row'>
                      {/* 1 img */}
                      <div className="small-banner position-relative p-3 col">
-                       <img src="/public/air.png" alt=""  className='img-fluid rounded-3'/>
+                       <img src="https://media.wired.com/photos/64de7dca4a854832b16fd3c0/1:1/w_1500,h_1500,c_limit/Garmin-Epix-Pro-Gear.jpg" alt=""  className='img-fluid rounded-3'/>
                        <div className="small-banner-content position-absolute text-white">
                         <h4>New Arrival</h4>
                         <h5>Gazi Smiss - B207</h5>
@@ -45,7 +45,7 @@ const Home = () => {
                     </div>
                     {/* 2 img */}
                     <div className="small-banner position-relative p-3 col">
-                       <img src="/public/apple-wach.jpg" alt=""  className='img-fluid rounded-3'/>
+                       <img src="https://media.wired.com/photos/64de7dca4a854832b16fd3c0/1:1/w_1500,h_1500,c_limit/Garmin-Epix-Pro-Gear.jpg" alt=""  className='img-fluid rounded-3'/>
                        <div className="small-banner-content position-absolute text-white">
                         <h4>New Arrival</h4>
                         <h5>Gazi Smiss - B207</h5>
@@ -58,7 +58,7 @@ const Home = () => {
                     <div className='row'>
                         {/* 3 img */}
                     <div className="small-banner position-relative p-3 col">
-                       <img src="/public/apple-lap.jpg" alt=""  className='img-fluid rounded-3'/>
+                       <img src="https://media.wired.com/photos/64de7dca4a854832b16fd3c0/1:1/w_1500,h_1500,c_limit/Garmin-Epix-Pro-Gear.jpg" alt=""  className='img-fluid rounded-3'/>
                        <div className="small-banner-content position-absolute text-white">
                         <h4>New Arrival</h4>
                         <h5>Gazi Smiss - B207</h5>
@@ -68,7 +68,7 @@ const Home = () => {
                     </div>
                     {/* 4 img */}
                     <div className="small-banner position-relative p-3 col">
-                       <img src="/public/ipad.jpg" alt=""  className='img-fluid rounded-3'/>
+                       <img src="https://media.wired.com/photos/64de7dca4a854832b16fd3c0/1:1/w_1500,h_1500,c_limit/Garmin-Epix-Pro-Gear.jpg" alt=""  className='img-fluid rounded-3'/>
                        <div className="small-banner-content position-absolute text-white">
                         <h4>New Arrival</h4>
                         <h5>Gazi Smiss - B207</h5>

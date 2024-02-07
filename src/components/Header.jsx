@@ -1,7 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 import { BsSearch } from "react-icons/bs";
-
-
+import { IoGitCompareSharp } from "react-icons/io5";
+import { FaRegHeart, FaShoppingCart, FaUserAlt } from "react-icons/fa";
 
 const Header = () => {
     return (
@@ -45,26 +45,26 @@ const Header = () => {
             <div className="header-upper-links d-flex align-items-center justify-content-between">
                 <div>
                     <Link to="/compare" className="d-flex align-items-center">
-                    <img src="/public/svg-compare.svg" alt="" />
+                    <IoGitCompareSharp className="fs-1 text-dark"/>&nbsp; 
                     <p className="text-white mr-3 mb-0">Compare <br /> Products</p>
                     </Link>
                 </div>
                 <div>
                 <Link to="/wish-list" className="d-flex align-items-center">
-                    <img src="/public/wishlist-1.png" alt="" />
+                <FaRegHeart  className="fs-1 text-dark"/>&nbsp; 
                     <p className="text-white mr-3 mb-0">Favourite<br /> Wishlist</p>
                     </Link>
                 </div>
                 <div>
                 <Link to='/login' className="d-flex align-items-center">
-                    <img src="/public/login.png" alt="" />
+                <FaUserAlt className="fs-1 text-dark"/>&nbsp; 
                     <p className="text-white mr-3 mb-0">Login<br /> Account</p>
                     </Link>
                 </div>
                 <div>
                 <Link to="/cart" className="d-flex align-items-center gap-10">
            
-                <img src="/public/cart.png" alt="" />
+                <FaShoppingCart className="fs-1 text-dark" />&nbsp; 
                     <div className="d-flex flex-column">
                         <span className="badge bg-white text-dark gap-10">
                          00

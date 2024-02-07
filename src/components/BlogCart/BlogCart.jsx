@@ -6,7 +6,7 @@ const BlogCart = () => {
        
             <div className="blog-card">
                 <div className="card-image">
-                    <img className="img-fluid" src="/public/blog-1.jpg" alt="" />
+                    <img className="img-fluid" src="https://media.wired.com/photos/64de7dca4a854832b16fd3c0/1:1/w_1500,h_1500,c_limit/Garmin-Epix-Pro-Gear.jpg" alt="" />
                     
                 </div>
                 <div className="blog-content">

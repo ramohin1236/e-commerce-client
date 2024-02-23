@@ -22,9 +22,20 @@ export const loginUser =createAsyncThunk("auth/register", async(userData,thunkAP
      return thunkAPI.rejectWithValue(error)
     }
 })
+export const getUserProductWishlist =createAsyncThunk("auth/userwishlist", async(thunkAPI)=>{
+    try{
+        return await authSevice.getUserWishList()
+    }catch(error){
+     return thunkAPI.rejectWithValue(error)
+    }
+})
+
+const getCustomerfromLocalStorage = localStorage.getItem("customer")
+  ? JSON.parse(localStorage.getItem("customer"))
+  : null;
 
 const initialState={
-    user: "",
+    user: getCustomerfromLocalStorage,
     isError: false,
     isSuccess: false,
     isLoading: false,
@@ -75,6 +86,23 @@ extraReducers:(builder)=>{
            toast.error(action.error)
        }
    })
+   .addCase(getUserProductWishlist.pending,(state)=>{
+    state.isLoading=true;
+})
+.addCase(getUserProductWishlist.fulfilled,(state,action)=>{
+   state.isLoading=false;
+   state.isError=false;
+   state.isSuccess=true;
+   state.wishlist= action.payload;
+   state.message = "Wishlist Products Featched Successfully!"
+  
+}).addCase(getUserProductWishlist.rejected,(state,action)=>{
+     state.isLoading=false;
+     state.isError= true;
+     state.isSuccess= false;
+     state.message= action.error;
+     
+})
 }
 })
 

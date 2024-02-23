@@ -215,6 +215,7 @@ useEffect(()=>{
                         <div className="products-list pb-5 ">
                             <div className="d-flex   ">
                                 <ProductCard productState={productState}/>
+                                {/* <ProductCard productState={productState? productState : []}/> */}
                               
 
 

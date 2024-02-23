@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable react/no-unknown-property */
 
@@ -11,17 +12,37 @@ import { FaAlignJustify, FaBars, FaEquals } from "react-icons/fa";
 import ProductCard from './../../components/FeaturedProduct/ProductCard';
 import Color from "../../components/Color/Color";
 import Container from "../../components/Container/Container";
+import { useDispatch, useSelector } from "react-redux";
+import { getAllProducts } from "../../features/Product/productSlice";
+import { useEffect } from "react";
 
 
 
 
 const Store = () => {
+
+const productState = useSelector((state)=>state.product.product)
+const dispatch= useDispatch()
+   
+useEffect(()=>{
+    getProducts()
+},[])
+
+    const getProducts =()=>{
+        dispatch(getAllProducts())
+    }
+   
+
+
+
     return (
         <div>
+            
             <Meta title={"Our Store"} />
             <BreadCrump title="Our Store" />
             <Container class1="store-wrapper home-wrapper-2 py-5">
                 <div className="row">
+                    
                     <div className="col-3">
                         <div className="filter-card mb-3">
                             <h3 className="filter-title">
@@ -192,12 +213,9 @@ const Store = () => {
 
                         {/* product list */}
                         <div className="products-list pb-5 ">
-                            <div className="d-flex flex-wrap  gap-60">
-                                <ProductCard />
-                                <ProductCard />
-                                <ProductCard />
-                                <ProductCard />
-                                <ProductCard />
+                            <div className="d-flex   ">
+                                <ProductCard productState={productState}/>
+                              
 
 
                             </div>

@@ -9,9 +9,26 @@ import Special from '../../sharred/Home-5/Special';
 import Popular from '../../sharred/Home-6/Popular';
 import Famous from '../../sharred/Home-7/Famous';
 import Container from '../../components/Container/Container';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { getAllProducts } from '../../features/Product/productSlice';
 
 
 const Home = () => {
+ 
+    const productState = useSelector((state)=>state.product.product)
+ console.log(productState);
+    const dispatch=useDispatch()
+    useEffect(()=>{
+        getProducts()
+    },[])
+    
+        const getProducts =()=>{
+            dispatch(getAllProducts())
+        }
+   
+
+
     return (
         <div>
             <Container class1="home-wrapper-1 py-5">
@@ -100,12 +117,19 @@ const Home = () => {
 
                   {/* special secton */}
             <Container class1="home-wrapper-2 py-5">
-                   <Special/>
+            <div className='section-heading'>
+                 Special Product
+               </div>
+               <div className=''>
+               
+                <Special productState={productState} />
+               </div>
+                   
             </Container>
 
                    {/* Popular section */}
             <Container class1="home-wrapper-2 py-5">
-                <Popular/>
+                <Popular productState={productState} />
             </Container>
 
                      {/* section second */}

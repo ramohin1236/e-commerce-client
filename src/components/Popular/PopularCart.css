@@ -1,0 +1,24 @@
+.card-productt{
+    width: 30%;
+    height: 500px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 20px;
+}
+.image{
+    width: 200px;
+    height: 280px;
+    margin-left: 80px;
+}
+.brand{
+    font-size: 1.5rem;
+    color: brown;
+}
+.title{
+    margin-top: 20px;
+  margin-bottom: 8px;
+}
+.icons{
+    margin-top: -400px;
+    gap: 10px;
+}

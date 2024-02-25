@@ -107,7 +107,7 @@ const Home = () => {
 
              {/* Featured section */}
             <Container class1="home-wrapper-2 py-5">
-               <Featured/>
+               <Featured productState={productState}/>
             </Container>
 
                   {/* famous section */} 

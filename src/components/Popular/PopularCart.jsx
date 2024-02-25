@@ -9,6 +9,7 @@ import { useDispatch } from 'react-redux';
 import { Link, useLocation } from 'react-router-dom';
 import { addToWishList } from '../../features/Product/productSlice';
 import './PopularCart.css'
+import { ReactStars } from 'react-rating-stars-component';
 
 
 const PopularCart = (props) => {
@@ -33,13 +34,9 @@ const PopularCart = (props) => {
                     {brand}
                      </h6>
                  <h5 className='title'>{title}</h5>
-                 {/* <ReactStars
- count={5}
- size={24}
- value={ratings}
- edit={false}
- activeColor="#ffd700"
-/> */}
+                <div>
+              
+                </div>
                  <p className='price'>${price}</p>
              </div>
             
@@ -49,7 +46,7 @@ const PopularCart = (props) => {
                
                className="fs-5 icon"/> </Link>
                 <Link><FaBagShopping  className="fs-5 icon"/></Link>
-                <Link><FaEye className="fs-5 icon"/></Link>
+                <Link to={`/store/product/${id}`}><FaEye className="fs-5 icon"/></Link>
                 <Link><IoIosGitCompare className="fs-5 icon"/></Link>
               </div>
             

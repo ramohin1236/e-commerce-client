@@ -21,6 +21,7 @@ const Popular = ({productState}) => {
                     productState && productState?.map((item,idx)=>{
                         if(item?.tags == "popular"){
                           return  <PopularCart
+                    
                           quantity={parseFloat(item?.quantity)}
                           id={item?._id}
                           img={item?.images[0]?.url}

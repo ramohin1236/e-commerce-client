@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-import { Link, useLocation} from 'react-router-dom';
+import { Link, useLocation, useNavigate} from 'react-router-dom';
 import './ProductCard.css';
 import { CiHeart } from "react-icons/ci";
 import { FaBagShopping, FaEye } from "react-icons/fa6";
@@ -14,7 +14,7 @@ const ProductCard = (props) => {
     const {productState}=props
  let location = useLocation()
 const dispatch= useDispatch()
-
+const navigate =useNavigate()
 
  const addToWish =(id)=>{
 
@@ -27,8 +27,7 @@ const dispatch= useDispatch()
             productState?.map?.((item,idx)=>{
                 return(
                        <div key={idx} className='col-4'>
-                        <Link  to={`${location.pathname == "/store"
-                    ? "/store/product/:id" : location.pathname == "/store/product/:id" ? "/store/product/:id" : "/store/product/:id"}`} className='product-card position-relative'>
+                        <Link  className='product-card position-relative'>
                     <div className="card-product" >
                     <div className="card-image">
                              <img className="img-fluid" src={item?.images[0]?.url} alt="" />
@@ -56,7 +55,9 @@ const dispatch= useDispatch()
                            
                            className="fs-5 icon"/> </Link>
                             <Link><FaBagShopping  className="fs-5 icon"/></Link>
-                            <Link><FaEye className="fs-5 icon"/></Link>
+                            <Link to={`/store/product/${item?._id}`}><FaEye
+                          
+                            className="fs-5 icon"/></Link>
                             <Link><IoIosGitCompare className="fs-5 icon"/></Link>
                           </div>
                          </div>

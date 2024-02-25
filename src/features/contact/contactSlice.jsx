@@ -2,6 +2,7 @@
 /* eslint-disable no-unused-vars */
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { contactService } from "./contactService";
+import { toast } from "react-toastify";
 
 
 
@@ -38,12 +39,18 @@ extraReducers:(builder)=>{
         state.isError=false;
         state.isSuccess=true;
         state.contact=action.payload;
+        if(state.isSuccess === true){
+            toast.success("Contact Form Submitted Successfully!")
+        }
     })
     .addCase(createQuery.rejected,(state,action)=>{
         state.isError=true;
         state.isLoading =false;
         state.isSuccess=false;
         state.message=action.error;
+        if(state.isError === true){
+            toast.error("Something Wrong!")
+        }
     })
 
 }

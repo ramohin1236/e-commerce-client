@@ -9,6 +9,8 @@ import { IoInformationOutline } from "react-icons/io5";
 import Container from '../components/Container/Container';
 import { useFormik } from 'formik';
 import * as yup from "yup";
+import { useDispatch } from 'react-redux';
+import { createQuery } from '../features/contact/contactSlice';
 
 
 const contactSchema = yup.object({
@@ -23,6 +25,7 @@ const contactSchema = yup.object({
 
 
 const Contact = () => {
+    const dispatch =useDispatch()
     const formik = useFormik({
         initialValues: {
           name: '',
@@ -33,6 +36,8 @@ const Contact = () => {
         validationSchema: contactSchema,
         onSubmit: (values) => {
          console.log(values);
+         dispatch(createQuery({name: values.name,email: values.email,mobile:values.mobile,comment:values.comment}))
+        
         },
       });
     return (

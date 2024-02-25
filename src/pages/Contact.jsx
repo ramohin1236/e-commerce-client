@@ -7,10 +7,34 @@ import { IoCall } from "react-icons/io5";
 import { MdEmail } from "react-icons/md";
 import { IoInformationOutline } from "react-icons/io5";
 import Container from '../components/Container/Container';
+import { useFormik } from 'formik';
+import * as yup from "yup";
+
+
+const contactSchema = yup.object({
+    
+    name: yup.string().required("Name is required"),
+    email: yup.string().email("Email Should be Vaild").required("Email is required"),
+
+    mobile: yup.string().default('').nullable().required("Mobile Number is required"),
+    comment: yup.string().default('').nullable().required("Comments Number is required"),
+
+  });
 
 
 const Contact = () => {
-
+    const formik = useFormik({
+        initialValues: {
+          name: '',
+          mobile: '',
+          email: '',
+          comment: '',
+        },
+        validationSchema: contactSchema,
+        onSubmit: (values) => {
+         console.log(values);
+        },
+      });
     return (
         <div>
                 <Meta title={"Contact"} />
@@ -26,24 +50,75 @@ const Contact = () => {
 <div>
     <h3 className="contact-title ">Contact</h3>
     {/* form */}
-    <form action="" className='d-flex flex-column gap-15 '>
+    <form action="" onSubmit={formik.handleSubmit} className='d-flex flex-column gap-15'>
         {/* 1 */}
         <div>
-        <input type="text" className="form-control" placeholder='Name' />
+        <input 
+        type="text" 
+        className="form-control" 
+        placeholder='Name' 
+         name='name'
+         onChange={formik.handleChange("name")}
+         onBlur={formik.handleBlur("name")}
+         value={formik.values.name}
+        />
         </div>
+        <p style={{"color":"red"}}>
+     {
+        formik.touched.name && formik.errors.name
+     }
+  </p>
         {/* 2 */}
         <div>
-        <input type="text" className="form-control" placeholder='Email' />
+        <input 
+         name='email'
+         onChange={formik.handleChange("email")}
+         onBlur={formik.handleBlur("email")}
+         value={formik.values.email}
+        type="email" 
+        className="form-control" 
+        placeholder='Email' />
         </div>
+        <p style={{"color":"red"}}>
+     {
+        formik.touched.email && formik.errors.email
+     }
+  </p>
         {/* 3 */}
         <div>
-        <input type="text" className="form-control" placeholder='Mobile Number' />
+        <input 
+         name='mobile'
+         onChange={formik.handleChange("mobile")}
+         onBlur={formik.handleBlur("mobile")}
+         value={formik.values.mobile}
+        type="number" 
+        className="form-control"
+         placeholder='Mobile Number' />
         </div>
+        <p style={{"color":"red"}}>
+     {
+        formik.touched.mobile && formik.errors.mobile
+     }
+  </p>
         {/* 4 */}
         <div>
-        <textarea placeholder='Comments' name="" id="" cols="30" className='w-100 form-control' rows="4"></textarea>
+        <textarea 
+         name='comment'
+         onChange={formik.handleChange("comment")}
+         onBlur={formik.handleBlur("comment")}
+         value={formik.values.comment}
+        placeholder='Comments'
+        id="" 
+        cols="30"
+         className='w-100 form-control' 
+         rows="4"></textarea>
         </div> 
-        <button className='button btn-2 border-0'>Submit</button>
+        <p style={{"color":"red"}}>
+     {
+        formik.touched.comment && formik.errors.comment
+     }
+  </p>
+        <button type='submit' className='button btn-2 border-0'>Submit</button>
     </form>
     </div>
 <div>

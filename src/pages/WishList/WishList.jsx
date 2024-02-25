@@ -34,11 +34,11 @@ const WishList = () => {
             <Container class1="wishlist-wrapper home-wrapper-2 py-5">
             <div className="row">
 
-
+      
          
 
          {
-            wishListState?.map((item,idx)=>{
+         wishListState?.map((item,idx)=>{
                 return(
 <div key={idx} className="col-3">
              <div className='compare-product-card position-relative'>

@@ -18,7 +18,7 @@ const Popular = ({productState}) => {
             </div>
             <div className='d-flex flex-wrap gap-15'>
           {
-                    productState && productState?.map((item,idx)=>{
+                    productState && productState?.map?.((item,idx)=>{
                         if(item?.tags == "popular"){
                           return  <PopularCart
                     

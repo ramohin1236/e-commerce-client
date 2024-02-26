@@ -9,7 +9,7 @@ const Special = ({productState}) => {
             
           <div className='d-flex flex-wrap '>
           {
-                    productState && productState?.map((item,idx)=>{
+                    productState && productState?.map?.((item,idx)=>{
                         if(item?.tags == "special"){
                           return  <SpecialProduct
                           quantity={parseFloat(item?.quantity)}

@@ -55,9 +55,10 @@ const navigate =useNavigate()
                            
                            className="fs-5 icon"/> </Link>
                             <Link><FaBagShopping  className="fs-5 icon"/></Link>
-                            <Link to={`/store/product/${item?._id}`}><FaEye
-                          
-                            className="fs-5 icon"/></Link>
+                            <Link to={`/store/product/${item?._id}`}>
+                            <button onClick={()=>"/store/product/"+item?._id}><FaEye 
+                      
+                            className="fs-5 icon"/></button>  </Link>
                             <Link><IoIosGitCompare className="fs-5 icon"/></Link>
                           </div>
                          </div>

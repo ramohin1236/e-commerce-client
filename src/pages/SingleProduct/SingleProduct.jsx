@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import BreadCrump from "../../components/BreadCrump";
 import { IoGitCompareOutline } from "react-icons/io5";
 import { FaRegHeart } from "react-icons/fa";
@@ -10,14 +10,44 @@ import ReactStars from "react-rating-stars-component";
 import ReactImageZoom from 'react-image-zoom';
 import Color from './../../components/Color/Color';
 import Container from "../../components/Container/Container";
+import { useLocation } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { getAProduct } from "../../features/Product/productSlice";
+import { toast } from "react-toastify";
 
 
 const SingleProduct = () => {
+    const [color, setColor]=useState(null)
+    const [quantity, setQuantity]=useState(1)
+    const location =useLocation()
+    const getProductId = location.pathname.split("/")[3]
+    const dispatch =useDispatch()
+    const productState = useSelector(state=>state?.product?.singleproduct)
+    console.log(productState);
+ 
+    useEffect(()=>{
+        dispatch(getAProduct(getProductId))
+       
+    },[dispatch,getProductId])
+
+    const uploadCart=()=>{
+        if(color === null){
+           toast.error("Please Choose Color")
+        }
+    }
+
+
     const props = {
          width: 400,
          height: 500, 
          zoomWidth: 500, 
-         img: "https://media.wired.com/photos/64de7dca4a854832b16fd3c0/1:1/w_1500,h_1500,c_limit/Garmin-Epix-Pro-Gear.jpg"};
+         img: 
+         productState?.images[0]?.url? productState?.images[0]?.url 
+                      :                 
+         "https://media.wired.com/photos/64de7dca4a854832b16fd3c0/1:1/w_1500,h_1500,c_limit/Garmin-Epix-Pro-Gear.jpg"
+         
+         };
+        //  console.log(productState?.images[0]?.url);
     const [orderProduct, setOrderProduct]=useState(true);
 
 // copy clipboard-----------
@@ -48,18 +78,16 @@ const SingleProduct = () => {
            {/* other product image  */}
 
    <div className="other-product-image d-flex flex-wrap gap-15">
-<div>
-    <img src="https://media.wired.com/photos/64de7dca4a854832b16fd3c0/1:1/w_1500,h_1500,c_limit/Garmin-Epix-Pro-Gear.jpg" alt="" className="img-fluid small-pic"/>
-    </div> 
-<div>
-    <img src="https://media.wired.com/photos/64de7dca4a854832b16fd3c0/1:1/w_1500,h_1500,c_limit/Garmin-Epix-Pro-Gear.jpg" alt="" className="img-fluid small-pic"/>
-    </div> 
-<div>
-    <img src="https://media.wired.com/photos/64de7dca4a854832b16fd3c0/1:1/w_1500,h_1500,c_limit/Garmin-Epix-Pro-Gear.jpg" alt="" className="img-fluid small-pic"/>
-    </div> 
-<div>
-    <img src="https://media.wired.com/photos/64de7dca4a854832b16fd3c0/1:1/w_1500,h_1500,c_limit/Garmin-Epix-Pro-Gear.jpg" alt="" className="img-fluid small-pic"/>
-    </div> 
+          {
+            productState?.images?.map?.((item,idx)=>{
+                   return(
+                    <div  key={idx}>
+    <img src={item?.url}alt="" className="img-fluid small-pic"/>
+</div> 
+                   )
+            })
+          }
+
    </div>
 
         </div>
@@ -67,19 +95,19 @@ const SingleProduct = () => {
         <div className="col-6">
   <div className="main-product-details ">
      <div className="bottom-border ">
-     <h3 className="title">Kids Watch is the Best Multi Color For Students</h3>
+     <h3 className="title">{productState?.title}</h3>
      </div>
 
      <div className="bottom-border py-3">
 <p className="price ">
-    $ 100
+    $ {productState?.price}
 </p>
 <div className="d-flex align-items-center gap-10">
 <ReactStars
     count={5}
     size={24}
  
-    value={3}
+    value={productState?.totalratings}
     activeColor="#ffd700"
   />
   <p className="mb-0">(2 Reviews)</p>
@@ -92,13 +120,13 @@ const SingleProduct = () => {
     <h3 className="product-heading mb-0">Type: </h3> <p className="product-data mb-0">Watch</p>
 </div>
 <div className="d-flex gap-10 align-items-center mb-0 py-2">
-    <h3 className="product-heading mb-0">Brand: </h3> <p className="product-data mb-0">Wales</p>
+    <h3 className="product-heading mb-0">Brand: </h3> <p className="product-data mb-0">{productState?.brand}</p>
 </div>
 <div className="d-flex gap-10 align-items-center mb-0 py-2">
-    <h3 className="product-heading mb-0">Category: </h3> <p className="product-data mb-0">Watch</p>
+    <h3 className="product-heading mb-0">Category: </h3> <p className="product-data mb-0">{productState?.category}</p>
 </div>
 <div className="d-flex gap-10 align-items-center mb-0 py-2">
-    <h3 className="product-heading mb-0">Tags: </h3> <p className="product-data mb-0">Watch</p>
+    <h3 className="product-heading mb-0">Tags: </h3> <p className="product-data mb-0">{productState?.tags}</p>
 </div>
 <div className="d-flex gap-10 align-items-center mb-0 py-2">
     <h3 className="product-heading mb-0">Availability: </h3> <p className="product-data mb-0">In Stock</p>
@@ -115,16 +143,19 @@ const SingleProduct = () => {
 </div>
 <div className="d-flex gap-10 flex-column mb-0 py-2">
     <h3 className="product-heading mb-0">Color: </h3>
-    <Color/>
+    <Color setColor={setColor} colorData={productState?.color}/>
 </div>
 <div className="d-flex align-items-center gap-15 flex-row mb-0 py-2">
     <h3 className="product-heading mb-0">Quantity: </h3>
     <div className="">
- <input className="form-control" type="number" min={1} max={10} name="" id="" style={{"width": "100px"}}/>
+ <input 
+ onChange={(e)=>setQuantity(e.target.value)}
+ value={quantity}
+ className="form-control" type="number" min={1} max={10} name="" id="" style={{"width": "100px"}}/>
     </div>
 
     <div className="d-flex align-items-center gap-30">
-    <button className="button-3" type="submit">Add To Card</button>
+    <button onClick={()=>{uploadCart()}} className="button-3" type="submit">Add To Card</button>
 <button to='/signup' className="button-2">Buy It Now</button>
     </div>
 </div>
@@ -140,12 +171,12 @@ const SingleProduct = () => {
 
 {/* accordian */}
 <div className="d-flex flex-column gap-10 my-3">
-    <h3 className="product-heading mb-0">Shipping & Returns: </h3> <p className="product-data mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. <br />  animi aperiam accusamus minus. <b>5-7 bussiness days</b></p>
+    <h3 className="product-heading mb-0">Shipping & Returns: </h3> <p className="product-data mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. <br />  animi aperiam accusamus minus. <b style={{"color": "black"}}>5-7 bussiness days</b></p>
 </div>
 <div  className="d-flex  gap-10 align-items-center my-3">
     <h3 className="product-heading mb-0">Copy Product Link: </h3>
     <a href="javascript:void(0)"
-    onClick={()=>{copyToClipboard("https://media.wired.com/photos/64de7dca4a854832b16fd3c0/1:1/w_1500,h_1500,c_limit/Garmin-Epix-Pro-Gear.jpg")}}
+    onClick={()=>{copyToClipboard(window.location.href)}}
     >Copy Product Link</a>
      
 </div>
@@ -166,10 +197,11 @@ const SingleProduct = () => {
         <div className="col-12">
         <h4>Descriptions</h4>
             <div className="bg-white p-3">
-         
-            <p >
- Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, cumque! Qui sequi totam voluptatibus impedit dolores optio, eos eveniet laudantium veniam porro molestiae ea. Aliquam voluptates sint iste rerum et!
- Assumenda repudiandae fuga impedit similique labore voluptatibus eveniet omnis accusamus rem, corporis nostrum ad quam est nesciunt dolores cupiditate sint eaque suscipit error excepturi alias.
+            
+            <p dangerouslySetInnerHTML={{
+                __html: productState?.description
+            }} style={{fontSize: "20px"}}>
+           
             </p>
             </div>
         </div>

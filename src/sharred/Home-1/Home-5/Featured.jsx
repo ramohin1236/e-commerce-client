@@ -15,7 +15,7 @@ const Featured = ({productState}) => {
 
             <div className="d-flex flex-wrap gap-10 ">
             {
-                    productState && productState?.map((item,idx)=>{
+                    productState && productState?.map?.((item,idx)=>{
                         if(item?.tags == "featured"){
                           return  (
                           <FeaCart

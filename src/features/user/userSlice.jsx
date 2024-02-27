@@ -36,6 +36,14 @@ export const addToCart =createAsyncThunk("auth/cart/add", async(cartData,thunkAP
      return thunkAPI.rejectWithValue(error)
     }
 })
+export const getUserCart =createAsyncThunk("auth/cart/get", async(
+    thunkAPI)=>{
+    try{
+        return await authSevice.getCart()
+    }catch(error){
+     return thunkAPI.rejectWithValue(error)
+    }
+})
 
 const getCustomerfromLocalStorage = localStorage.getItem("customer")
   ? JSON.parse(localStorage.getItem("customer"))
@@ -118,9 +126,28 @@ extraReducers:(builder)=>{
    state.isError=false;
    state.isSuccess=true;
    state.cartProduct= action.payload;
-   state.message = "Cart Products Featched Successfully!"
+   if(state.isSuccess){
+    toast.success("Product Added To Cart")
+   }
   
 }).addCase(addToCart.rejected,(state,action)=>{
+     state.isLoading=false;
+     state.isError= true;
+     state.isSuccess= false;
+     state.message= action.error;
+     
+})
+   .addCase(getUserCart.pending,(state)=>{
+    state.isLoading=true;
+})
+.addCase(getUserCart.fulfilled,(state,action)=>{
+   state.isLoading=false;
+   state.isError=false;
+   state.isSuccess=true;
+   state.cartProducts= action.payload;
+   
+  
+}).addCase(getUserCart.rejected,(state,action)=>{
      state.isLoading=false;
      state.isError= true;
      state.isSuccess= false;

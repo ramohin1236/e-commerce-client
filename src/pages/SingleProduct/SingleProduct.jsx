@@ -14,6 +14,7 @@ import { useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getAProduct } from "../../features/Product/productSlice";
 import { toast } from "react-toastify";
+import { addToCart } from "../../features/user/userSlice";
 
 
 const SingleProduct = () => {
@@ -33,7 +34,11 @@ const SingleProduct = () => {
     const uploadCart=()=>{
         if(color === null){
            toast.error("Please Choose Color")
+           return false
         }
+         else{
+            dispatch(addToCart({productId:productState?._id,quantity, color,price: productState?.price}))
+         }            
     }
 
 

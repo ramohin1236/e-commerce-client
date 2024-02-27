@@ -2,8 +2,25 @@ import { Link, NavLink } from "react-router-dom";
 import { BsSearch } from "react-icons/bs";
 import { IoGitCompareSharp } from "react-icons/io5";
 import { FaRegHeart, FaShoppingCart, FaUserAlt } from "react-icons/fa";
+import { useDispatch, useSelector } from "react-redux";
+import { useState } from "react";
+import { useEffect } from "react";
 
 const Header = () => {
+
+    const dispatch = useDispatch()
+   
+  const cartState = useSelector(state=> state?.auth?.cartProducts)
+  const [total,setTotal]= useState(null);
+  console.log(total);
+     
+  useEffect(()=>{
+        let sum =0;
+        for(let index =0; index < cartState?.length; index++){
+            sum = sum+ (Number(cartState[index].quantity)*Number(cartState[index].price))
+            setTotal(sum)
+        }
+     },[cartState])
     return (
         <div>
             {/* header top section */}
@@ -67,9 +84,9 @@ const Header = () => {
                 <FaShoppingCart className="fs-1 text-dark" />&nbsp; 
                     <div className="d-flex flex-column">
                         <span className="badge bg-white text-dark gap-10">
-                         00
+                        {cartState?.length ? cartState?.length : "00"}
                         </span >
-                        <p className="py-2 text-white fs-6 mb-0">$500</p>
+                        <p className="py-2 text-white fs-6 mb-0">$ {total? total: "00"}</p>
                     </div>
                     </Link>
                 </div>

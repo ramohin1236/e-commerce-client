@@ -43,6 +43,17 @@ export const deleteCartProduct =createAsyncThunk("auth/cart/product/delete", asy
      return thunkAPI.rejectWithValue(error)
     }
 })
+
+export const updateCartProduct =createAsyncThunk("auth/cart/product/update", async(cartDetail,thunkAPI)=>{
+    try{
+        return await authSevice.updateProductCart(cartDetail)
+    }catch(error){
+     return thunkAPI.rejectWithValue(error)
+    }
+})
+
+
+
 export const getUserCart =createAsyncThunk("auth/cart/get", async(
     thunkAPI)=>{
     try{
@@ -184,6 +195,7 @@ extraReducers:(builder)=>{
        }
      
 })
+   
 }
 })
 

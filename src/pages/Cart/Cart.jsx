@@ -6,15 +6,26 @@ import { Link } from "react-router-dom";
 import Container from "../../components/Container/Container";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { getUserCart } from "../../features/user/userSlice";
+import { deleteCartProduct, getUserCart } from "../../features/user/userSlice";
+
 
 const Cart = () => {
     const dispatch =useDispatch();
     const userCartState = useSelector((state)=>state?.auth?.cartProducts)
     console.log(userCartState);
+   
     useEffect(()=>{
         dispatch(getUserCart())
-    },[])
+    },[dispatch])
+
+ 
+    const deleteCartItem=(id)=>{
+        dispatch(deleteCartProduct(id))
+        setTimeout(()=>{
+            dispatch(getUserCart())
+        },200)
+    }
+
     return (
         <div>
                 <Meta title={"Cart"} />
@@ -57,7 +68,9 @@ const Cart = () => {
                   max={10}
                   value={item?.quantity}
                   type="number" 
-                  name="" id=""  className="form-control"/>  <FaTrash className="fs-3 text-danger"/></div>
+                  name="" id=""  className="form-control"/>  
+                  
+                  <FaTrash onClick={()=>{deleteCartItem(item?._id)}} className="fs-3 text-danger"/></div>
                 </div>
                 <div className="cart-col-4 d-flex ">
                 <h5 className="price">${item?.price * item?.quantity}</h5>

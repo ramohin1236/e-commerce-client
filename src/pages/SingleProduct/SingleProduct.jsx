@@ -10,27 +10,41 @@ import ReactStars from "react-rating-stars-component";
 import ReactImageZoom from 'react-image-zoom';
 import Color from './../../components/Color/Color';
 import Container from "../../components/Container/Container";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getAProduct } from "../../features/Product/productSlice";
 import { toast } from "react-toastify";
-import { addToCart } from "../../features/user/userSlice";
+import { addToCart, getUserCart } from "../../features/user/userSlice";
 
 
 const SingleProduct = () => {
     const [color, setColor]=useState(null)
     const [quantity, setQuantity]=useState(1)
+    const [alreadyAdded, setAlreadyAdded]=useState(false)
+console.log(alreadyAdded);
     const location =useLocation()
+    const navigate =useNavigate()
     const getProductId = location.pathname.split("/")[3]
     const dispatch =useDispatch()
+
     const productState = useSelector(state=>state?.product?.singleproduct)
     console.log(productState);
  
+    const cartState = useSelector((state)=>state?.auth?.cartProducts)
+  
     useEffect(()=>{
         dispatch(getAProduct(getProductId))
+        dispatch(getUserCart())
        
     },[dispatch,getProductId])
 
+    useEffect(()=>{
+        for(let index= 0; index < cartState?.length; index++){
+            if(getProductId === cartState[index]?.productId?._id){
+          setAlreadyAdded(true)
+            }
+        }
+    },[])
     const uploadCart=()=>{
         if(color === null){
            toast.error("Please Choose Color")
@@ -38,6 +52,7 @@ const SingleProduct = () => {
         }
          else{
             dispatch(addToCart({productId:productState?._id,quantity, color,price: productState?.price}))
+            navigate('/cart')
          }            
     }
 
@@ -146,22 +161,38 @@ const SingleProduct = () => {
 
     </div>
 </div>
-<div className="d-flex gap-10 flex-column mb-0 py-2">
+
+
+{
+    alreadyAdded === false && <>
+    <div className="d-flex gap-10 flex-column mb-0 py-2">
     <h3 className="product-heading mb-0">Color: </h3>
     <Color setColor={setColor} colorData={productState?.color}/>
 </div>
+    </>
+}
+
 <div className="d-flex align-items-center gap-15 flex-row mb-0 py-2">
     <h3 className="product-heading mb-0">Quantity: </h3>
-    <div className="">
+   
+   {
+    alreadyAdded === false && <>
+     <div className="">
  <input 
  onChange={(e)=>setQuantity(e.target.value)}
  value={quantity}
  className="form-control" type="number" min={1} max={10} name="" id="" style={{"width": "100px"}}/>
     </div>
+    </>
+   }
 
-    <div className="d-flex align-items-center gap-30">
-    <button onClick={()=>{uploadCart()}} className="button-3" type="submit">Add To Card</button>
-<button to='/signup' className="button-2">Buy It Now</button>
+    <div className={alreadyAdded?"ms-0":"ms-5" +"d-flex align-items-center gap-30"}>
+    <button onClick={()=>{alreadyAdded?navigate('/cart'):uploadCart()}} className="button-3" type="submit">
+        {
+            alreadyAdded? "Go To Cart" : "Add To Cart"
+        }
+    </button>
+{/* <button to='/signup' className="button-2">Buy It Now</button> */}
     </div>
 </div>
 

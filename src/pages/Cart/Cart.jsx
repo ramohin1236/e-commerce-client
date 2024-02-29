@@ -58,7 +58,9 @@ const Cart = () => {
                 <div key={idx} className="cart-data py-3 d-flex justify-content-between align-items-center mb-2">
                 <div className="cart-col-1 d-flex align-items-center gap-15">
                  <div className="w-25">
-                     <img className="img-fluid" src="https://images.othoba.com/images/thumbs/0604005_new-stylish-olevs-leather-quartz-movement-watch-for-men_300.webp" alt="" />
+                     <img className="img-fluid" 
+                    //   "https://images.othoba.com/images/thumbs/0604005_new-stylish-olevs-leather-quartz-movement-watch-for-men_300.webp"
+                     src={item?.productId?.images[0].url} alt="" />
                  </div>
                  <div className="w-75">
                      <h5 >{item?.productId?.title}</h5>

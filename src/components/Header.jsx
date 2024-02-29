@@ -1,18 +1,26 @@
-import { Link, NavLink } from "react-router-dom";
+/* eslint-disable no-unused-vars */
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { BsSearch } from "react-icons/bs";
 import { IoGitCompareSharp } from "react-icons/io5";
 import { FaRegHeart, FaShoppingCart, FaUserAlt } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import { useEffect } from "react";
+import { Typeahead } from 'react-bootstrap-typeahead';
+import 'react-bootstrap-typeahead/css/Typeahead.css';
 
 const Header = () => {
 
     const dispatch = useDispatch()
-   
+   const navigate =useNavigate()
   const cartState = useSelector(state=> state?.auth?.cartProducts)
+  const authState =useSelector(state=>state?.auth)
+  const productState = useSelector((state)=>state?.product?.product)
+  const [productOpt,setProductOpt]=useState([])
   const [total,setTotal]= useState(null);
-  console.log(total);
+  const [paginate, setPaginate] = useState(true);
+  
+
      
   useEffect(()=>{
         let sum =0;
@@ -21,15 +29,32 @@ const Header = () => {
             setTotal(sum)
         }
      },[cartState])
+
+     useEffect(()=>{
+        let data =[]
+        for(let index =0; index < productState?.length; index++){
+            const element =productState[index]
+            data.push({id:index, prod:element?._id, name:element?.title})
+        }
+setProductOpt(data)
+     },[productState])
     return (
         <div>
             {/* header top section */}
               <div className="header-top-strip py-3">
                 <div className="container-xxl">
-                    <div className="row">
-                        <div  className="col-6 text-white">
-                            <p className="mb-0" > Free shipping Over $100 & Free Returns</p>
+                    <div className="row ">
+                        <div  className="col-6 text-white d-flex">
+                            {/* <p className="mb-0" > Free shipping Over $100 & Free Returns</p> */}
+                      {
+                        authState?.user === null? <Link to='/login'>Please Login</Link> :
+                        <p className="text-white mr-3 mb-0 ">
+                        Welcome {authState?.user?.firstname}</p>
+                      }
+                            
                         </div>
+
+                       
                         <div className="col-6">
                             <p className="text-end text-white mb-0">
                                 Hotline: <a href="tel: +08801533872264" className="text-white">
@@ -50,7 +75,18 @@ const Header = () => {
         <div className="col-5">
              {/* ---- */}
              <div className="input-group">
-  <input type="text" className="form-control py-2" placeholder="Search Product Here..." aria-label="Search Product Here..." aria-describedby="basic-addon2" />
+             <Typeahead
+        id="pagination-example"
+        onPaginate={() => console.log('Results paginated')}
+        onChange={(selected)=>{
+              navigate(`/store/product/${selected[0].prod}`)
+        }}
+        minLength={2}
+        options={productOpt}
+        paginate={paginate}
+        labelKey={"name"}
+        placeholder="Search for product here..."
+      />
   <span className="input-group-text p-3" id="basic-addon2">
   <BsSearch className="fs-5"/>
 
@@ -75,7 +111,12 @@ const Header = () => {
                 <div>
                 <Link to='/login' className="d-flex align-items-center">
                 <FaUserAlt className="fs-1 text-dark"/>&nbsp; 
-                    <p className="text-white mr-3 mb-0">Login<br /> Account</p>
+                    
+                    
+                     <p className="text-white mr-3 mb-0">Login</p> 
+                    
+
+                    
                     </Link>
                 </div>
                 <div>

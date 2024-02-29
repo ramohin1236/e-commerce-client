@@ -22,6 +22,7 @@ import RefundPoliicy from './pages/Refund/RefundPoliicy';
 import SingleProduct from './pages/SingleProduct/SingleProduct'
 import Cart from './pages/Cart/Cart'
 import ChekOut from './pages/Chekout/ChekOut'
+import { PrivateRoute } from './pages/PrivateRoute/PrivateRoute'
 
 
 
@@ -45,7 +46,7 @@ function App() {
            <Route path='/blogs' element={<BlogsPages/>}/>
            <Route path='/blogs/:id' element={<SingleBlog/>}/>
            <Route path='/compare' element={<CompareProducts/>}/>
-           <Route path='/wish-list' element={<WishList/>}/>
+           <Route path='/wish-list' element={<PrivateRoute><WishList/></PrivateRoute>}/>
            <Route path='/login' element={<Login/>}/>
            <Route path='/signup' element={<Signup/>}/>
            <Route path='/forgot-password' element={<ForgotPassword/>}/>
@@ -54,7 +55,7 @@ function App() {
            <Route path='/shipping' element={<ShippingPolicy/>}/>
            <Route path='/privacy' element={<PrivacyPolicy/>}/>
            <Route path='/refund' element={<RefundPoliicy/>}/>
-           <Route path='/cart' element={<Cart/>}/>
+           <Route path='/cart' element={<PrivateRoute><Cart/></PrivateRoute>}/>
            <Route path='/chekout' element={<ChekOut/>}/>
 
            </Route>

@@ -2,6 +2,7 @@
 /* eslint-disable no-unused-vars */
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { productService } from "./productService";
+import { toast } from "react-toastify";
 
 
 
@@ -25,6 +26,14 @@ export const addToWishList =createAsyncThunk(
     "procduct/wishlist", async(prodId,thunkAPI)=>{
     try{
         return await productService.addToWishList(prodId)
+    }catch(error){
+     return thunkAPI.rejectWithValue(error)
+    }
+})
+export const addRatings =createAsyncThunk(
+    "procduct/ratings", async(data,thunkAPI)=>{
+    try{
+        return await productService.rateProduct(data)
     }catch(error){
      return thunkAPI.rejectWithValue(error)
     }
@@ -86,6 +95,25 @@ extraReducers:(builder)=>{
    state.message="Product Fetched Successfully!";
 })
 .addCase(getAProduct.rejected,(state,action)=>{
+   state.isError=true;
+   state.isLoading =false;
+   state.isSuccess=false;
+   state.message=action.error;
+})
+   .addCase(addRatings.pending,(state)=>{
+    state.isLoading=true;
+})
+.addCase(addRatings.fulfilled,(state,action)=>{
+   state.isLoading =false;
+   state.isError=false;
+   state.isSuccess=true;
+   state.rating = action.payload;
+   state.message="Rating Added Successfully!";
+   if(state.isSuccess){
+    toast.success("Rating Added Successfully!")
+   }
+})
+.addCase(addRatings.rejected,(state,action)=>{
    state.isError=true;
    state.isLoading =false;
    state.isSuccess=false;

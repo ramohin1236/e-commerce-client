@@ -12,7 +12,7 @@ import Color from './../../components/Color/Color';
 import Container from "../../components/Container/Container";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { getAProduct } from "../../features/Product/productSlice";
+import { addRatings, getAProduct } from "../../features/Product/productSlice";
 import { toast } from "react-toastify";
 import { addToCart, getUserCart } from "../../features/user/userSlice";
 
@@ -81,6 +81,22 @@ console.log(alreadyAdded);
         textField.remove()
       }
 
+      const [star, setStar]=useState(null)
+      const [comment, setComment]=useState(null)
+
+      const addProductRatings=()=>{
+        if(star === null){
+            toast.error("Please add star ratings")
+            return false
+        }else if(comment === null){
+            toast.error("Please write a review about the product.")
+            return false
+        }else{
+            dispatch(addRatings({star: star, comment:comment,prodId: getProductId}))
+            
+        }
+        return false
+      }
     return (
         <div>
              <Meta title={"Dyanamic product"} />
@@ -254,6 +270,7 @@ console.log(alreadyAdded);
     <h3 className="mb-2">Customer Reviews</h3>
     <div className="d-flex gap-10 align-items-center" >
     <ReactStars
+    
     count={5}
     size={24}
  
@@ -277,9 +294,15 @@ console.log(alreadyAdded);
 {/* *******************form****************** */}
   <div  className="review-form py-4">
     <h4 className="mb-2">Customer Reviews</h4>
-  <form action="" className='d-flex flex-column gap-15 '>
+  <form 
+  
+  action="" className='d-flex flex-column gap-15 '>
   <div>
     <ReactStars
+      onChange={(e)=>{
+      
+        setStar(e);
+       }}
     count={5}
     size={24}
  edit={true}
@@ -292,10 +315,14 @@ console.log(alreadyAdded);
       
         {/* 4 */}
         <div>
-        <textarea placeholder='Comments' name="" id="" cols="30" className='w-100 form-control' rows="4"></textarea>
+        <textarea
+         onChange={(e)=>{
+            setComment(e.target.value);
+           }}
+        placeholder='Comments' name="" id="" cols="30" className='w-100 form-control' rows="4"></textarea>
         </div> 
        <div className="d-flex justify-content-end">
-       <button className='button btn-2 border-0'>Submit Review</button>
+       <button onClick={addProductRatings} type="button" className='button btn-2 border-0'>Submit Review</button>
        </div>
     </form>
   </div>
@@ -306,6 +333,7 @@ console.log(alreadyAdded);
    <div className="d-flex gap-10 align-items-center">
     <h5 className="mb-0">Robiul Awal Mohin</h5>
    <ReactStars
+ 
     count={5}
     size={24}
  edit={true}
